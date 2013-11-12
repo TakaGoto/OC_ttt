@@ -2,4 +2,4 @@
 set -e
 
 brew update
-brew install xctool
+brew unlink xctool
