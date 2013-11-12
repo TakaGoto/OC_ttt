@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 502E04461832B49800BD2EA2 /* BoardSpec.m */; };
-		502E044B1832B5B100BD2EA2 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 502E044A1832B5B100BD2EA2 /* Board.m */; };
+		507C1AFA1832C4CE006A7319 /* board.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1AF91832C4CE006A7319 /* board.m */; };
 		50989A8C1832B42A00563467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50989A8B1832B42A00563467 /* Cocoa.framework */; };
 		50989A8F1832B42A00563467 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50989A8E1832B42A00563467 /* main.m */; };
 		E8A238F4C4884561BF965874 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 896A4E496793478E8BC26B70 /* libPods-test.a */; };
@@ -16,8 +16,8 @@
 
 /* Begin PBXFileReference section */
 		502E04461832B49800BD2EA2 /* BoardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardSpec.m; sourceTree = "<group>"; };
-		502E04491832B4FC00BD2EA2 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
-		502E044A1832B5B100BD2EA2 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		507C1AF81832C4CE006A7319 /* board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = board.h; path = Src/board.h; sourceTree = "<group>"; };
+		507C1AF91832C4CE006A7319 /* board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = board.m; path = Src/board.m; sourceTree = "<group>"; };
 		50989A881832B42A00563467 /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
 		50989A8B1832B42A00563467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		50989A8E1832B42A00563467 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,17 +42,17 @@
 		502E04481832B4E900BD2EA2 /* OCTicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				507C1AF71832C4AB006A7319 /* Src */,
 				50989A8D1832B42A00563467 /* Specs */,
-				507A28BF1832C19A00C5AB98 /* Src */,
 			);
 			name = OCTicTacToe;
 			sourceTree = "<group>";
 		};
-		507A28BF1832C19A00C5AB98 /* Src */ = {
+		507C1AF71832C4AB006A7319 /* Src */ = {
 			isa = PBXGroup;
 			children = (
-				502E04491832B4FC00BD2EA2 /* Board.h */,
-				502E044A1832B5B100BD2EA2 /* Board.m */,
+				507C1AF81832C4CE006A7319 /* board.h */,
+				507C1AF91832C4CE006A7319 /* board.m */,
 			);
 			name = Src;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				502E044B1832B5B100BD2EA2 /* Board.m in Sources */,
+				507C1AFA1832C4CE006A7319 /* board.m in Sources */,
 				50989A8F1832B42A00563467 /* main.m in Sources */,
 				502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */,
 			);
