@@ -25,7 +25,7 @@
 }
 
 - (void) replaceSlot:(int)index withMark:(NSString*)mark {
-    [slots insertObject:mark atIndex:index];
+    [slots replaceObjectAtIndex:index withObject:mark];
 }
 
 @end

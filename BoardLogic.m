@@ -59,8 +59,18 @@
     return (boardSize * boardSize);
 }
 
++ (BOOL) isFull:(Board *)board {
+    BOOL isFull = YES;
+    for (NSObject *slot in board.slots) {
+        if ([slot isNotEqualTo:@"X"] && [slot isNotEqualTo:@"O"]) {
+            isFull = NO;
+        }
+    }
+    return isFull;
+}
+
 + (BOOL) isTie:(Board *)board {
-    return true;
+    return ![self hasWinner:board] && [self isFull:board];
 }
 
 + (BOOL) hasWinner:(Board *)board {

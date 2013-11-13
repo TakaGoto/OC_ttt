@@ -53,7 +53,11 @@ OCDSpec2Context(BoardLogicSpec) {
               bigBoard = [[Board alloc] init:4];
           });
           
-          It(@"return true if the game is a tie", ^{
+          It(@"returns false if the board is not full", ^{
+              [ExpectBool([BoardLogic isFull:board]) toBeFalse];
+          });
+          
+          It(@"returns true if the board is full", ^{
               [board replaceSlot:0 withMark:@"X"];
               [board replaceSlot:1 withMark:@"O"];
               [board replaceSlot:2 withMark:@"X"];
@@ -61,9 +65,27 @@ OCDSpec2Context(BoardLogicSpec) {
               [board replaceSlot:4 withMark:@"O"];
               [board replaceSlot:5 withMark:@"O"];
               [board replaceSlot:6 withMark:@"X"];
-              [board replaceSlot:9 withMark:@"O"];
+              [board replaceSlot:7 withMark:@"X"];
+              [board replaceSlot:8 withMark:@"X"];
+              [ExpectBool([BoardLogic isFull:board]) toBeTrue];
+          });
+          
+          It(@"return true if the game is a tie", ^{
+              [board replaceSlot:0 withMark:@"X"];
+              [board replaceSlot:1 withMark:@"O"];
+              [board replaceSlot:2 withMark:@"X"];
+              [board replaceSlot:3 withMark:@"X"];
+              [board replaceSlot:4 withMark:@"O"];
+              [board replaceSlot:5 withMark:@"X"];
+              [board replaceSlot:6 withMark:@"O"];
+              [board replaceSlot:7 withMark:@"X"];
+              [board replaceSlot:8 withMark:@"O"];
               [ExpectBool([BoardLogic isTie:board]) toBeTrue];
 
+          });
+          
+          It(@"returns false if the game is not a tie", ^{
+              [ExpectBool([BoardLogic isTie:board]) toBeFalse];
           });
           
           It(@"return true if X is a winner on a 3x3", ^{

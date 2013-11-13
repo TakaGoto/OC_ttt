@@ -11,6 +11,8 @@
 
 +(NSMutableArray*) diagonalCombinations:(int)boardSize withCombinations:(NSMutableArray*)combinations;
 
++(BOOL) isFull:(Board*)board;
+
 +(BOOL) isTie:(Board*)board;
 
 +(BOOL) hasWinner:(Board*)board;
