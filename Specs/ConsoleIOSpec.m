@@ -1,7 +1,7 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import "ConsoleUi.h"
-#import "MockOutput.h"
-#import "ConsoleOutput.h"
+#import "MockIO.h"
+#import "ConsoleIO.h"
 
 OCDSpec2Context(ConsoleIOSpec) {
 
@@ -43,7 +43,7 @@ OCDSpec2Context(ConsoleIOSpec) {
           NSString* userInput = [ui promptBoardSize];
           [ExpectStr(userInput) toContain:@"user input"];
       });
-            
+      
       It(@"asks for player one type", ^{
           [ui promptPlayerOneType];
           [ExpectStr(mockOutput.text) toContain:@"Enter player one type (h/c): "];

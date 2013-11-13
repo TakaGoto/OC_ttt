@@ -10,12 +10,12 @@
 		502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 502E04461832B49800BD2EA2 /* BoardSpec.m */; };
 		507C1AFA1832C4CE006A7319 /* board.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1AF91832C4CE006A7319 /* board.m */; };
 		507C1AFC1832D0A2006A7319 /* ConsoleIOSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1AFB1832D0A2006A7319 /* ConsoleIOSpec.m */; };
-		507C1B1C1832E461006A7319 /* MockOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B1B1832E461006A7319 /* MockOutput.m */; };
+		507C1B1C1832E461006A7319 /* MockIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B1B1832E461006A7319 /* MockIO.m */; };
 		507C1B211832ED37006A7319 /* HumanSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B201832ED37006A7319 /* HumanSpec.m */; };
 		507C1B271832F094006A7319 /* ComputerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B261832F094006A7319 /* ComputerSpec.m */; };
 		507C1B3218330780006A7319 /* ComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B2E18330780006A7319 /* ComputerPlayer.m */; };
 		507C1B3318330780006A7319 /* HumanPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B3018330780006A7319 /* HumanPlayer.m */; };
-		507C1B3A183307C8006A7319 /* ConsoleOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B36183307C8006A7319 /* ConsoleOutput.m */; };
+		507C1B3A183307C8006A7319 /* ConsoleIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B36183307C8006A7319 /* ConsoleIO.m */; };
 		507C1B3B183307C8006A7319 /* ConsoleUi.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B38183307C8006A7319 /* ConsoleUi.m */; };
 		507C1B4218330EDA006A7319 /* GameSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B4118330EDA006A7319 /* GameSpec.m */; };
 		507C1B4718331234006A7319 /* MockUi.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B4618331234006A7319 /* MockUi.m */; };
@@ -42,8 +42,8 @@
 		507C1AF81832C4CE006A7319 /* board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = board.h; path = Src/board.h; sourceTree = "<group>"; };
 		507C1AF91832C4CE006A7319 /* board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = board.m; path = Src/board.m; sourceTree = "<group>"; };
 		507C1AFB1832D0A2006A7319 /* ConsoleIOSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleIOSpec.m; sourceTree = "<group>"; };
-		507C1B1A1832E461006A7319 /* MockOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockOutput.h; path = Mocks/MockOutput.h; sourceTree = "<group>"; };
-		507C1B1B1832E461006A7319 /* MockOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockOutput.m; path = Mocks/MockOutput.m; sourceTree = "<group>"; };
+		507C1B1A1832E461006A7319 /* MockIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockIO.h; path = Mocks/MockIO.h; sourceTree = "<group>"; };
+		507C1B1B1832E461006A7319 /* MockIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockIO.m; path = Mocks/MockIO.m; sourceTree = "<group>"; };
 		507C1B201832ED37006A7319 /* HumanSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HumanSpec.m; sourceTree = "<group>"; };
 		507C1B261832F094006A7319 /* ComputerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerSpec.m; sourceTree = "<group>"; };
 		507C1B2D18330780006A7319 /* ComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComputerPlayer.h; path = Src/Players/ComputerPlayer.h; sourceTree = "<group>"; };
@@ -51,8 +51,8 @@
 		507C1B2F18330780006A7319 /* HumanPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HumanPlayer.h; path = Src/Players/HumanPlayer.h; sourceTree = "<group>"; };
 		507C1B3018330780006A7319 /* HumanPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HumanPlayer.m; path = Src/Players/HumanPlayer.m; sourceTree = "<group>"; };
 		507C1B3118330780006A7319 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Src/Players/Player.h; sourceTree = "<group>"; };
-		507C1B35183307C8006A7319 /* ConsoleOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleOutput.h; path = Src/Ui/ConsoleOutput.h; sourceTree = "<group>"; };
-		507C1B36183307C8006A7319 /* ConsoleOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleOutput.m; path = Src/Ui/ConsoleOutput.m; sourceTree = "<group>"; };
+		507C1B35183307C8006A7319 /* ConsoleIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleIO.h; path = Src/Ui/ConsoleIO.h; sourceTree = "<group>"; };
+		507C1B36183307C8006A7319 /* ConsoleIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleIO.m; path = Src/Ui/ConsoleIO.m; sourceTree = "<group>"; };
 		507C1B37183307C8006A7319 /* ConsoleUi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleUi.h; path = Src/Ui/ConsoleUi.h; sourceTree = "<group>"; };
 		507C1B38183307C8006A7319 /* ConsoleUi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleUi.m; path = Src/Ui/ConsoleUi.m; sourceTree = "<group>"; };
 		507C1B39183307C8006A7319 /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IO.h; path = Src/Ui/IO.h; sourceTree = "<group>"; };
@@ -131,8 +131,8 @@
 		507C1B001832D422006A7319 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				507C1B1A1832E461006A7319 /* MockOutput.h */,
-				507C1B1B1832E461006A7319 /* MockOutput.m */,
+				507C1B1A1832E461006A7319 /* MockIO.h */,
+				507C1B1B1832E461006A7319 /* MockIO.m */,
 				507C1B4318330FD7006A7319 /* MockUi.h */,
 				507C1B4618331234006A7319 /* MockUi.m */,
 			);
@@ -155,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				507C1B4E18331EB1006A7319 /* Ui.h */,
-				507C1B35183307C8006A7319 /* ConsoleOutput.h */,
-				507C1B36183307C8006A7319 /* ConsoleOutput.m */,
+				507C1B35183307C8006A7319 /* ConsoleIO.h */,
+				507C1B36183307C8006A7319 /* ConsoleIO.m */,
 				507C1B37183307C8006A7319 /* ConsoleUi.h */,
 				507C1B38183307C8006A7319 /* ConsoleUi.m */,
 				507C1B39183307C8006A7319 /* IO.h */,
@@ -399,11 +399,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507C1B3A183307C8006A7319 /* ConsoleOutput.m in Sources */,
+				507C1B3A183307C8006A7319 /* ConsoleIO.m in Sources */,
 				507C1B4718331234006A7319 /* MockUi.m in Sources */,
 				507C1B271832F094006A7319 /* ComputerSpec.m in Sources */,
 				507C1AFC1832D0A2006A7319 /* ConsoleIOSpec.m in Sources */,
-				507C1B1C1832E461006A7319 /* MockOutput.m in Sources */,
+				507C1B1C1832E461006A7319 /* MockIO.m in Sources */,
 				507C1B4D18331E87006A7319 /* Game.m in Sources */,
 				507C1B3318330780006A7319 /* HumanPlayer.m in Sources */,
 				507C1AFA1832C4CE006A7319 /* board.m in Sources */,

@@ -1,4 +1,4 @@
-#import "ConsoleOutput.h"
+#import "ConsoleIO.h"
 #import "stdio.h"
 
 @implementation ConsoleOutput

@@ -1,4 +1,4 @@
-#import "MockOutput.h"
+#import "MockIO.h"
 
 @implementation MockOutput
 
