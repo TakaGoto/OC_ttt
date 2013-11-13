@@ -59,4 +59,32 @@
     return (boardSize * boardSize);
 }
 
++ (BOOL) isTie:(Board *)board {
+    return true;
+}
+
++ (BOOL) hasWinner:(Board *)board {
+    BOOL hasWinner = NO;
+    NSInteger size = sqrt([board.slots count]);
+    int boardSize = (int)size;
+    NSMutableArray *winningCombinations = [self generateWinCombinations:boardSize];
+    NSMutableArray *possibleSlots = [[NSMutableArray alloc] initWithCapacity:boardSize];
+    
+    for (NSArray *combination in winningCombinations) {
+        for (NSString *slot in combination) {
+            [possibleSlots addObject:[board.slots objectAtIndex:[slot intValue]]];
+        }
+        
+        if ([[possibleSlots componentsJoinedByString:@""]  isEqual: @"XXX"] ||
+            [[possibleSlots componentsJoinedByString:@""]  isEqual: @"OOO"] ||
+            [[possibleSlots componentsJoinedByString:@""]  isEqual: @"XXXX"] ||
+            [[possibleSlots componentsJoinedByString:@""]  isEqual: @"OOOO"]) {
+            hasWinner = YES;
+        }
+        
+        possibleSlots = [[NSMutableArray alloc] initWithCapacity:boardSize];
+    }
+    return hasWinner;
+}
+
 @end

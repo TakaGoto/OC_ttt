@@ -1,5 +1,6 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import "BoardLogic.h"
+#import "board.h"
 
 OCDSpec2Context(BoardLogicSpec) {
   
@@ -41,6 +42,67 @@ OCDSpec2Context(BoardLogicSpec) {
         });
         
     });
+      
+      Describe(@"game state", ^{
+          
+          __block Board* board;
+          __block Board* bigBoard;
+          
+          BeforeEach(^{
+              board = [[Board alloc] init:3];
+              bigBoard = [[Board alloc] init:4];
+          });
+          
+          It(@"return true if the game is a tie", ^{
+              [board replaceSlot:0 withMark:@"X"];
+              [board replaceSlot:1 withMark:@"O"];
+              [board replaceSlot:2 withMark:@"X"];
+              [board replaceSlot:3 withMark:@"X"];
+              [board replaceSlot:4 withMark:@"O"];
+              [board replaceSlot:5 withMark:@"O"];
+              [board replaceSlot:6 withMark:@"X"];
+              [board replaceSlot:9 withMark:@"O"];
+              [ExpectBool([BoardLogic isTie:board]) toBeTrue];
+
+          });
+          
+          It(@"return true if X is a winner on a 3x3", ^{
+              [board replaceSlot:0 withMark:@"X"];
+              [board replaceSlot:1 withMark:@"X"];
+              [board replaceSlot:2 withMark:@"X"];
+              [ExpectBool([BoardLogic hasWinner:board]) toBeTrue];
+          });
+          
+          It(@"return true if O is a winneron a 3x3", ^{
+              [board replaceSlot:0 withMark:@"O"];
+              [board replaceSlot:1 withMark:@"O"];
+              [board replaceSlot:2 withMark:@"O"];
+              [ExpectBool([BoardLogic hasWinner:board]) toBeTrue];
+              
+          });
+          
+          It(@"return true if X is a winner on a 4x4", ^{
+              [bigBoard replaceSlot:4 withMark:@"X"];
+              [bigBoard replaceSlot:5 withMark:@"X"];
+              [bigBoard replaceSlot:6 withMark:@"X"];
+              [bigBoard replaceSlot:7 withMark:@"X"];
+              [ExpectBool([BoardLogic hasWinner:bigBoard]) toBeTrue];
+          });
+          
+          It(@"return true if O is a winneron a 4x4", ^{
+              [bigBoard replaceSlot:0 withMark:@"O"];
+              [bigBoard replaceSlot:5 withMark:@"O"];
+              [bigBoard replaceSlot:10 withMark:@"O"];
+              [bigBoard replaceSlot:15 withMark:@"O"];
+              [ExpectBool([BoardLogic hasWinner:bigBoard]) toBeTrue];
+              
+          });
+          
+          It(@"return false if there is no winner", ^{
+              [ExpectBool([BoardLogic hasWinner:board]) toBeFalse];
+          });
+          
+      });
     
   });
   

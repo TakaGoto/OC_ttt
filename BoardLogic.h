@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "board.h"
 
 @interface BoardLogic : NSObject
 
@@ -10,5 +11,8 @@
 
 +(NSMutableArray*) diagonalCombinations:(int)boardSize withCombinations:(NSMutableArray*)combinations;
 
++(BOOL) isTie:(Board*)board;
+
++(BOOL) hasWinner:(Board*)board;
 
 @end
