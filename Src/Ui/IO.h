@@ -6,6 +6,6 @@
 
 - (void) write:(NSString*)msg;
 
-- (NSString*) readLine;
+- (NSString*) readLine:(NSString*)input;
 
 @end

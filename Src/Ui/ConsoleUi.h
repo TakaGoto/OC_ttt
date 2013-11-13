@@ -12,10 +12,18 @@
 
 - (void) promptGoodBye;
 
+- (void) printBoard:(Board *)board;
+
 - (NSString*) promptBoardSize;
+
+- (NSString*) validateBoardInput:(NSString*)input;
 
 - (NSString*) promptMove;
 
 - (NSString*) promptPlayerOneType;
+
+- (NSString*) promptPlayerTwoType;
+
+- (BOOL) validateInput:(NSString*)input with:(NSArray*)match;
 
 @end

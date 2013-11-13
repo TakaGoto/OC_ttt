@@ -1,6 +1,6 @@
 #import "MockIO.h"
 
-@implementation MockOutput
+@implementation MockIO
 
 @synthesize text;
 
@@ -8,8 +8,16 @@
     self.text = msg;
 }
 
-- (NSString*) readLine {
-    return [NSString stringWithFormat:@"user input"];
+- (NSString*) readLine:(NSString*)input {
+    if ([input  isEqual: @"board size"]) {
+        return [NSString stringWithFormat:@"3"];
+    } else if ([input isEqual: @"player type"]) {
+        return [NSString stringWithFormat:@"h"];
+    } else if ([input isEqual: @"player move"]) {
+        return [NSString stringWithFormat:@"5"];
+    } else {
+        return [NSString stringWithFormat:@"mock"];
+    }
 }
 
 @end

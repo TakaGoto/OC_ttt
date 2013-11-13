@@ -154,12 +154,12 @@
 		507C1B34183307BF006A7319 /* Ui */ = {
 			isa = PBXGroup;
 			children = (
-				507C1B4E18331EB1006A7319 /* Ui.h */,
+				507C1B39183307C8006A7319 /* IO.h */,
 				507C1B35183307C8006A7319 /* ConsoleIO.h */,
 				507C1B36183307C8006A7319 /* ConsoleIO.m */,
+				507C1B4E18331EB1006A7319 /* Ui.h */,
 				507C1B37183307C8006A7319 /* ConsoleUi.h */,
 				507C1B38183307C8006A7319 /* ConsoleUi.m */,
-				507C1B39183307C8006A7319 /* IO.h */,
 			);
 			name = Ui;
 			sourceTree = "<group>";

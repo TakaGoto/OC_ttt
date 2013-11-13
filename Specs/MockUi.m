@@ -10,6 +10,7 @@
 @synthesize promptedMove;
 @synthesize promptedBoardSize;
 @synthesize promptedPlayerOneType;
+@synthesize promptedPlayerTwoType;
 
 
 - (void) welcomeUser {
@@ -18,6 +19,10 @@
 
 - (void) promptGoodBye {
     self.promptedGoodBye = YES;
+}
+
+- (void) printBoard:(Board *)board {
+    self.printedBoard = YES;
 }
 
 - (NSString*) promptMove {
@@ -33,6 +38,15 @@
 - (NSString*) promptPlayerOneType {
     self.promptedPlayerOneType = YES;
     return [NSString stringWithFormat:@"prompted player one type"];
+}
+
+- (NSString*) promptPlayerTwoType {
+    self.promptedPlayerTwoType = YES;
+    return [NSString stringWithFormat:@"prompted player two type"];
+}
+
+- (BOOL) validateInput:(NSString *)input with:(NSArray *)word {
+    return false;
 }
 
 @end

@@ -1,9 +1,11 @@
 #import "IO.h"
 
-@interface MockOutput : NSObject <IO>
+@interface MockIO : NSObject <IO>
 
-@property (nonatomic) NSString* text;
+@property (nonatomic, strong) NSString* text;
 
 - (void) write:(NSString*)msg;
+
+- (NSString*) readLine:(NSString*)input;
 
 @end

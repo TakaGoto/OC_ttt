@@ -9,7 +9,7 @@
     NSLog(@"%@", msg);
 }
 
-- (NSString*) readLine {
+- (NSString*) readLine:(NSString*)input {
     char buf[80];
     fgets(buf, 80, stdin);
     NSString *userInput = [NSString stringWithUTF8String:buf];

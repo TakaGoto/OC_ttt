@@ -13,7 +13,7 @@
 
 - (void) createBoard:(int)size {
     NSMutableArray *generatedBoard = [NSMutableArray array];
-    int counter = 0;
+    int counter = 1;
 
     for(int row = 0; row < size; ++row) {
         for(int col = 0; col < size; ++col) {
