@@ -3,14 +3,20 @@
 
 @interface MockUi : NSObject <Ui>
 
-@property bool welcomedUser;
-@property bool promptedGoodBye;
-@property bool promptedMove;
+@property BOOL welcomedUser;
+@property BOOL promptedGoodBye;
+@property BOOL promptedMove;
+@property BOOL promptedBoardSize;
+@property BOOL promptedPlayerOneType;
 
 - (void) welcomeUser;
 
 - (void) promptGoodBye;
 
-- (void) promptMove;
+- (NSString*) promptMove;
+
+- (NSString*) promptBoardSize;
+
+- (NSString*) promptPlayerOneType;
 
 @end

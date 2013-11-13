@@ -1,7 +1,9 @@
-#import "Output.h"
+#import "IO.h"
 
-@interface ConsoleOutput : NSObject <Output>
+@interface ConsoleOutput : NSObject <IO>
 
 - (void) write:(NSString *)msg;
+
+- (NSString*) readLine;
 
 @end

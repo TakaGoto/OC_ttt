@@ -55,7 +55,7 @@
 		507C1B36183307C8006A7319 /* ConsoleOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleOutput.m; path = Src/Ui/ConsoleOutput.m; sourceTree = "<group>"; };
 		507C1B37183307C8006A7319 /* ConsoleUi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleUi.h; path = Src/Ui/ConsoleUi.h; sourceTree = "<group>"; };
 		507C1B38183307C8006A7319 /* ConsoleUi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleUi.m; path = Src/Ui/ConsoleUi.m; sourceTree = "<group>"; };
-		507C1B39183307C8006A7319 /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Output.h; path = Src/Ui/Output.h; sourceTree = "<group>"; };
+		507C1B39183307C8006A7319 /* IO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IO.h; path = Src/Ui/IO.h; sourceTree = "<group>"; };
 		507C1B40183309D4006A7319 /* playGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = playGame.m; sourceTree = "<group>"; };
 		507C1B4118330EDA006A7319 /* GameSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSpec.m; sourceTree = "<group>"; };
 		507C1B4318330FD7006A7319 /* MockUi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockUi.h; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				507C1B36183307C8006A7319 /* ConsoleOutput.m */,
 				507C1B37183307C8006A7319 /* ConsoleUi.h */,
 				507C1B38183307C8006A7319 /* ConsoleUi.m */,
-				507C1B39183307C8006A7319 /* Output.h */,
+				507C1B39183307C8006A7319 /* IO.h */,
 			);
 			name = Ui;
 			sourceTree = "<group>";
@@ -701,6 +701,7 @@
 				507C1B8118332351006A7319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		507C1B8218332351006A7319 /* Build configuration list for PBXNativeTarget "TestingTests" */ = {
 			isa = XCConfigurationList;
@@ -709,6 +710,7 @@
 				507C1B8418332351006A7319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50989A811832B41E00563467 /* Build configuration list for PBXProject "OCTicTacToe" */ = {
 			isa = XCConfigurationList;

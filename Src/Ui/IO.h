@@ -1,9 +1,11 @@
 #import <Foundation/Foundation.h>
 
-@protocol Output
+@protocol IO
 
 @property (nonatomic, strong) NSString* text;
 
 - (void) write:(NSString*)msg;
+
+- (NSString*) readLine;
 
 @end

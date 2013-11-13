@@ -1,6 +1,6 @@
-#import "Output.h"
+#import "IO.h"
 
-@interface MockOutput : NSObject <Output>
+@interface MockOutput : NSObject <IO>
 
 @property (nonatomic) NSString* text;
 

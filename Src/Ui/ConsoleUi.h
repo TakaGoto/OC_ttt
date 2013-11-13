@@ -1,17 +1,21 @@
 #import <Foundation/Foundation.h>
-#import "Output.h"
+#import "IO.h"
 #import "Ui.h"
 
 @interface ConsoleUi : NSObject <Ui>
 
-@property (nonatomic, strong) id<Output> output;
+@property (nonatomic, strong) id<IO> io;
 
-- (id) init:(id<Output>)output;
+- (id) init:(id<IO>)io;
 
 - (void) welcomeUser;
 
 - (void) promptGoodBye;
 
-- (void) promptMove;
+- (NSString*) promptBoardSize;
+
+- (NSString*) promptMove;
+
+- (NSString*) promptPlayerOneType;
 
 @end

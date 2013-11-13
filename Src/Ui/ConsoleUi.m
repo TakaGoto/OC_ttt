@@ -1,25 +1,37 @@
 #import "ConsoleUi.h"
-#import "Output.h"
+#import "IO.h"
+#import "stdio.h"
 
 @implementation ConsoleUi
 
-- (id) init:(id<Output>)output {
+- (id) init:(id<IO>)io {
     if (self = [super init]) {
-        self.output = output;
+        self.io = io;
     }
     return (self);
 }
 
 - (void) welcomeUser {
-    [self.output write:@"Welcome!"];
+    [self.io write:@"Welcome!"];
 }
 
 - (void) promptGoodBye {
-    [self.output write:@"Good Bye!"];
+    [self.io write:@"Good Bye!"];
 }
 
-- (void) promptMove {
-    [self.output write:@"Make your move: "];
+- (NSString*) promptBoardSize {
+    [self.io write:@"Enter board size (3/4): "];
+    return [self.io readLine];
+}
+
+- (NSString*) promptMove {
+    [self.io write:@"Make your move: "];
+    return [self.io readLine];
+}
+
+- (NSString*) promptPlayerOneType {
+    [self.io write:@"Enter player one type (h/c): "];
+    return [self.io readLine];
 }
 
 @end

@@ -4,6 +4,8 @@
 
 - (void) welcomeUser;
 - (void) promptGoodBye;
-- (void) promptMove;
+- (NSString*) promptMove;
+- (NSString*) promptBoardSize;
+- (NSString*) promptPlayerOneType;
 
 @end

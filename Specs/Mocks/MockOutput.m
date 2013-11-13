@@ -8,4 +8,8 @@
     self.text = msg;
 }
 
+- (NSString*) readLine {
+    return [NSString stringWithFormat:@"user input"];
+}
+
 @end
