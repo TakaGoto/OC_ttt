@@ -41,6 +41,7 @@
 		507C1B37183307C8006A7319 /* ConsoleUi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleUi.h; path = Src/Ui/ConsoleUi.h; sourceTree = "<group>"; };
 		507C1B38183307C8006A7319 /* ConsoleUi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleUi.m; path = Src/Ui/ConsoleUi.m; sourceTree = "<group>"; };
 		507C1B39183307C8006A7319 /* Output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Output.h; path = Src/Ui/Output.h; sourceTree = "<group>"; };
+		507C1B40183309D4006A7319 /* playGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = playGame.m; sourceTree = "<group>"; };
 		50989A881832B42A00563467 /* Specs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
 		50989A8B1832B42A00563467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		50989A8E1832B42A00563467 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 			children = (
 				507C1AF71832C4AB006A7319 /* Src */,
 				50989A8D1832B42A00563467 /* Specs */,
+				507C1B40183309D4006A7319 /* playGame.m */,
 			);
 			name = OCTicTacToe;
 			sourceTree = "<group>";

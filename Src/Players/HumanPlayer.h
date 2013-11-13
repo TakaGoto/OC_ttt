@@ -10,7 +10,7 @@
 
 @interface HumanPlayer : NSObject <Player>
 
-@property (nonatomic) NSString* mark;
+@property (nonatomic, strong) NSString* mark;
 
 - (id) init:(NSString*)m;
 

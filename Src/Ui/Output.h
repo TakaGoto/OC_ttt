@@ -10,7 +10,7 @@
 
 @protocol Output
 
-@property (nonatomic) NSString* text;
+@property (nonatomic, strong) NSString* text;
 
 - (void) write:(NSString*)msg;
 

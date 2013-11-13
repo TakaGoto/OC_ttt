@@ -10,7 +10,7 @@
 
 @interface Board : NSObject
 
-@property (nonatomic) NSMutableArray *slots;
+@property (nonatomic, strong) NSMutableArray *slots;
 
 - (id) init:(int)size;
 
