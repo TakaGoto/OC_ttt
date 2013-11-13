@@ -1,9 +1,10 @@
 #import <Foundation/Foundation.h>
 #import "Output.h"
+#import "Ui.h"
 
-@interface ConsoleUi : NSObject
+@interface ConsoleUi : NSObject <Ui>
 
-@property (nonatomic) id<Output> output;
+@property (nonatomic, strong) id<Output> output;
 
 - (id) init:(id<Output>)output;
 
