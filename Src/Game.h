@@ -6,9 +6,9 @@
 @interface Game : NSObject
 
 @property (nonatomic, strong) id<Ui> ui;
-@property (nonatomic, strong) Board* board;
 @property (nonatomic, strong) id<Player> playerOne;
 @property (nonatomic, strong) id<Player> playerTwo;
+@property (nonatomic, strong) Board* board;
 
 - (id) initWithUi:(id<Ui>)ui;
 

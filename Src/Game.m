@@ -12,8 +12,7 @@
 }
 
 - (void) createBoard {
-    int boardSize;
-    boardSize = [[[self ui] promptBoardSize] intValue];
+    int boardSize = [[[self ui] promptBoardSize] intValue];
     self.board = [[Board alloc] init:boardSize];
 }
 

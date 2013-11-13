@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 502E04461832B49800BD2EA2 /* BoardSpec.m */; };
+		5058F15C1833ECFA00ABF92D /* BoardLogicSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5058F15B1833ECFA00ABF92D /* BoardLogicSpec.m */; };
+		5058F1621833EE9800ABF92D /* BoardLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5058F1611833EE9800ABF92D /* BoardLogic.m */; };
 		507C1AFA1832C4CE006A7319 /* board.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1AF91832C4CE006A7319 /* board.m */; };
 		507C1AFC1832D0A2006A7319 /* ConsoleIOSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1AFB1832D0A2006A7319 /* ConsoleIOSpec.m */; };
 		507C1B1C1832E461006A7319 /* MockIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 507C1B1B1832E461006A7319 /* MockIO.m */; };
@@ -39,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		502E04461832B49800BD2EA2 /* BoardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardSpec.m; sourceTree = "<group>"; };
+		5058F15B1833ECFA00ABF92D /* BoardLogicSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardLogicSpec.m; sourceTree = "<group>"; };
+		5058F15D1833EDD100ABF92D /* BoardLogic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardLogic.h; sourceTree = "<group>"; };
+		5058F1611833EE9800ABF92D /* BoardLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardLogic.m; sourceTree = "<group>"; };
 		507C1AF81832C4CE006A7319 /* board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = board.h; path = Src/board.h; sourceTree = "<group>"; };
 		507C1AF91832C4CE006A7319 /* board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = board.m; path = Src/board.m; sourceTree = "<group>"; };
 		507C1AFB1832D0A2006A7319 /* ConsoleIOSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleIOSpec.m; sourceTree = "<group>"; };
@@ -124,6 +129,8 @@
 				507C1AF91832C4CE006A7319 /* board.m */,
 				507C1B4B18331E87006A7319 /* Game.h */,
 				507C1B4C18331E87006A7319 /* Game.m */,
+				5058F15D1833EDD100ABF92D /* BoardLogic.h */,
+				5058F1611833EE9800ABF92D /* BoardLogic.m */,
 			);
 			name = Src;
 			sourceTree = "<group>";
@@ -215,6 +222,7 @@
 				507C1B201832ED37006A7319 /* HumanSpec.m */,
 				507C1B261832F094006A7319 /* ComputerSpec.m */,
 				507C1B4118330EDA006A7319 /* GameSpec.m */,
+				5058F15B1833ECFA00ABF92D /* BoardLogicSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -401,6 +409,7 @@
 			files = (
 				507C1B3A183307C8006A7319 /* ConsoleIO.m in Sources */,
 				507C1B4718331234006A7319 /* MockUi.m in Sources */,
+				5058F15C1833ECFA00ABF92D /* BoardLogicSpec.m in Sources */,
 				507C1B271832F094006A7319 /* ComputerSpec.m in Sources */,
 				507C1AFC1832D0A2006A7319 /* ConsoleIOSpec.m in Sources */,
 				507C1B1C1832E461006A7319 /* MockIO.m in Sources */,
@@ -412,6 +421,7 @@
 				502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */,
 				507C1B3218330780006A7319 /* ComputerPlayer.m in Sources */,
 				507C1B4218330EDA006A7319 /* GameSpec.m in Sources */,
+				5058F1621833EE9800ABF92D /* BoardLogic.m in Sources */,
 				507C1B3B183307C8006A7319 /* ConsoleUi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

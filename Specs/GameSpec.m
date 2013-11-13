@@ -47,7 +47,7 @@ OCDSpec2Context(GameSpec) {
 
     });
       
-      Describe(@"game has a board, an ui, and players", ^{
+      Describe(@"game has instances", ^{
           
           BeforeEach(^{
               [game startGame];
