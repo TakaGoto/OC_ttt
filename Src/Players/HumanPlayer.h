@@ -1,11 +1,3 @@
-//
-//  HumanPlayer.h
-//  OCTicTacToe
-//
-//  Created by Takayuki on 11/12/13.
-//
-//
-
 #import "Player.h"
 
 @interface HumanPlayer : NSObject <Player>

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #include <stdlib.h>
-#import "Src/Board.h"
+#import "Src/Ui/ConsoleUi.h"
 
 int main(int argc, const char * argv[]) {
   @autoreleasepool {

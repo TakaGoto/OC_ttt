@@ -1,11 +1,3 @@
-//
-//  ComputerPlayer.m
-//  OCTicTacToe
-//
-//  Created by Takayuki on 11/12/13.
-//
-//
-
 #import "ComputerPlayer.h"
 
 @implementation ComputerPlayer

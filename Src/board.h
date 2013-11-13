@@ -1,11 +1,3 @@
-//
-//  Board.h
-//  OCTicTacToe
-//
-//  Created by Takayuki on 11/12/13.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 @interface Board : NSObject
@@ -19,10 +11,3 @@
 - (void) replaceSlot:(int)index withMark:(NSString*)mark;
 
 @end
-
-#ifndef OCTicTacToe_Board_h
-#define OCTicTacToe_Board_h
-
-
-
-#endif
