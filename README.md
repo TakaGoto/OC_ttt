@@ -8,4 +8,4 @@ OC_ttt
 
 <b>To run tests</b>
 
-- xctool -workspace OCTicTacToe.xcworkspace -scheme Specs build test
+- xctool -workspace OCTicTacToe.xcworkspace -scheme Specs

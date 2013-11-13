@@ -3,7 +3,7 @@
 
 OCDSpec2Context(BoardSpec) {
   
-  Describe(@"-someBehavior", ^{
+  Describe(@"Board", ^{
       __block Board *board;
 
       BeforeEach(^{
