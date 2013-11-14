@@ -15,6 +15,12 @@
 
 - (NSMutableArray*) makeMoveWith:(Board*)board andUi:(id<Ui>)ui {
     NSString *userInput = [ui promptMove];
+    
+    while (![board validSlot:[userInput intValue]]) {
+        [ui printBoard:board];
+        userInput = [ui promptMoveAgain];
+    }
+    
     [board replaceSlot:[userInput intValue]-1 withMark:self.mark];
     return board.slots;
 }

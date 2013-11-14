@@ -27,7 +27,7 @@ OCDSpec2Context(GameSpec) {
         });
         
         It(@"makes a move", ^{
-            [ExpectObj([game.board.slots objectAtIndex:4]) toBe:@"O"];
+            [ExpectObj([game.board.slots objectAtIndex:1]) toBe:@"O"];
         });
         
         It(@"displays the board", ^{

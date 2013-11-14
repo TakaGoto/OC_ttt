@@ -1,7 +1,10 @@
 #import <Foundation/Foundation.h>
 #import "../board.h"
+#import "IO.h"
 
 @protocol Ui
+
+- (id) init:(id<IO>)io;
 
 - (void) welcomeUser;
 
@@ -10,6 +13,8 @@
 - (void) promptResult:(NSString*)gameState;
 
 - (void) printBoard:(Board*)board;
+
+- (NSString*) promptMoveAgain;
 
 - (NSString*) promptMove;
 

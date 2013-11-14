@@ -29,6 +29,34 @@ OCDSpec2Context(BoardSpec) {
           [board replaceSlot:5 withMark:@"X"];
           [ExpectObj([board.slots objectAtIndex:5]) toBe:@"X"];
       });
+      
+      It(@"returns true if slot is available", ^{
+          [ExpectBool([board validSlot:5]) toBeTrue];
+      });
+      
+      It(@"returns false if slot is not available", ^{
+          [board replaceSlot:0 withMark:@"X"];
+          [ExpectBool([board validSlot:1]) toBeFalse];
+      });
+      
+      It(@"returns false if slot with O is not available", ^{
+          [board replaceSlot:4 withMark:@"O"];
+          [ExpectBool([board validSlot:5]) toBeFalse];
+      });
+      
+      It(@"returns false if slot number is over index", ^{
+          [ExpectBool([board validSlot:20]) toBeFalse];
+      });
+      
+      It(@"returns false if slot number is under index", ^{
+          [ExpectBool([board validSlot:-10]) toBeFalse];
+      });
+      
+      It(@"returns false is O takes the spot", ^{
+          [board replaceSlot:0 withMark:@"O"];
+          [board replaceSlot:4 withMark:@"X"];
+          [ExpectBool([board validSlot:1]) toBeFalse];
+      });
   });
 
 }

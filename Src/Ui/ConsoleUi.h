@@ -16,9 +16,9 @@
 
 - (void) promptResult:(NSString *)gameState;
 
-- (NSString*) promptBoardSize;
+- (NSString*) promptMoveAgain;
 
-- (NSString*) validateBoardInput:(NSString*)input;
+- (NSString*) promptBoardSize;
 
 - (NSString*) promptMove;
 

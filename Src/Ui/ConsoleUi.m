@@ -4,9 +4,11 @@
 
 @implementation ConsoleUi
 
-- (id) init:(id<IO>)io {
+@synthesize io;
+
+- (id) init:(id<IO>)thisIO {
     if (self = [super init]) {
-        self.io = io;
+        self.io = thisIO;
     }
     return (self);
 }
@@ -17,6 +19,11 @@
 
 - (void) promptGoodBye {
     [self.io write:@"Good Bye!"];
+}
+
+- (NSString*) promptMoveAgain {
+    [self.io write:@"Please enter a valid move: "];
+    return [self.io readLine:@"player move"];
 }
 
 - (void) printBoard:(Board *)board {
@@ -37,8 +44,7 @@
 
 - (NSString*) promptBoardSize {
     [self.io write:@"Enter board size (3/4): "];
-    NSString *userInput = [self validateBoardInput:[self.io readLine:@"board size"]];
-    return userInput;
+    return [self validateBoardInput:[self.io readLine:@"board size"]];
 }
 
 - (NSString*) validateBoardInput:(NSString*)input {
@@ -57,22 +63,38 @@
 
 - (NSString*) promptPlayerOneType {
     [self.io write:@"Enter player one type (h/c): "];
-    return [self.io readLine:@"player type"];
+    return [self validatePlayerType:[self.io readLine:@"player type"]];
 }
 
 - (NSString*) promptPlayerTwoType {
     [self.io write:@"Enter player two type (h/c): "];
-    return [self.io readLine:@"player type"];
+    return [self validatePlayerType:[self.io readLine:@"player type"]];
+}
+
+- (NSString*) validatePlayerType:(NSString*)input {
+    NSArray* matches = [NSArray arrayWithObjects:@"h", @"c", nil];
+    while ([self validateInput:input with:matches]) {
+        [self.io write:@"Please enter correct player type (h/c): "];
+        input = [self.io readLine:@"player type"];
+    }
+    return input;
 }
 
 - (BOOL) promptPlayAgain {
     [self.io write:@"Would you like to play again? (y/n): "];
     NSString* userInput = [self.io readLine:@"play again"];
+    if ([[userInput lowercaseString] isEqualToString:@"n"]) {
+        return NO;
+    } else if ([[userInput lowercaseString] isEqualToString:@"y"]) {
+        return YES;
+    } else {
+        [self promptPlayAgain];
+    }
     return NO;
 }
 
 - (BOOL) validateInput:(NSString*)input with:(NSArray*)match {
-    return false;
+    return ![match containsObject:input];
 }
 
 @end

@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "Ui.h"
+#import "IO.h"
 
 @interface MockUi : NSObject <Ui>
 
@@ -13,6 +14,10 @@
 @property BOOL printedBoard;
 @property BOOL promptedTie;
 @property BOOL promptedWinner;
+@property BOOL promptedMoveAgain;
+@property id<IO> io;
+
+- (id) init:(id<IO>)io;
 
 - (void) welcomeUser;
 
@@ -21,6 +26,8 @@
 - (void) printBoard:(Board *)board;
 
 - (void) promptResult:(NSString *)gameState;
+
+- (NSString*) promptMoveAgain;
 
 - (NSString*) promptMove;
 

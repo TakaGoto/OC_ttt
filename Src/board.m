@@ -17,7 +17,7 @@
 
     for(int row = 0; row < size; ++row) {
         for(int col = 0; col < size; ++col) {
-            [generatedBoard addObject:@(counter)];
+            [generatedBoard addObject:[NSString stringWithFormat:@"%d", counter]];
             counter++;
         }
     }
@@ -26,6 +26,13 @@
 
 - (void) replaceSlot:(int)index withMark:(NSString*)mark {
     [slots replaceObjectAtIndex:index withObject:mark];
+}
+
+- (BOOL) validSlot:(int)index {
+    return index <= [self.slots count] &&
+           index > 0 &&
+           ![[self.slots objectAtIndex:index-1] isEqualToString:@"X"] &&
+           ![[self.slots objectAtIndex:index-1] isEqualToString:@"O"];
 }
 
 @end

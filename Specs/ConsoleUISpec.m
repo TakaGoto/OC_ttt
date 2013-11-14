@@ -23,6 +23,11 @@ OCDSpec2Context(ConsoleUISpec) {
           [ui promptGoodBye];
           [ExpectStr(mockIO.text) toContain:@"Good Bye!"];
       });
+      
+      It(@"promps the user to enter a valid move", ^{
+          [ui promptMoveAgain];
+          [ExpectStr(mockIO.text) toContain:@"Please enter a valid move: "];
+      });
 
       It(@"prompts user to make a move", ^{
           [ui promptMove];

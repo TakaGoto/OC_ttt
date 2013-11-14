@@ -12,8 +12,7 @@
 - (NSString*) readLine:(NSString*)input {
     char buf[1];
     gets(buf);
-    NSString *userInput = [NSString stringWithUTF8String:buf];
-    return userInput;
+    return [NSString stringWithUTF8String:buf];
 }
 
 @end

@@ -10,4 +10,6 @@
 
 - (void) replaceSlot:(int)index withMark:(NSString*)mark;
 
+- (BOOL) validSlot:(int)index;
+
 @end

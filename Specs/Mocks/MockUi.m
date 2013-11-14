@@ -14,7 +14,14 @@
 @synthesize promptedPlayAgain;
 @synthesize promptedTie;
 @synthesize promptedWinner;
+@synthesize promptedMoveAgain;
 
+- (id) init:(id<IO>)io {
+    if (self = [super init]) {
+        self.io = io;
+    }
+    return (self);
+}
 
 - (void) welcomeUser {
     self.welcomedUser = YES;
@@ -34,6 +41,11 @@
     } else {
         self.promptedWinner = YES;
     }
+}
+
+- (NSString*) promptMoveAgain {
+    promptedMoveAgain = YES;
+    return @"2";
 }
 
 - (NSString*) promptMove {

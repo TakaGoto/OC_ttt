@@ -40,20 +40,28 @@
 
 - (void) startGame {
     [[self ui] welcomeUser];
+    
+    [self setUpGame];
+}
+
+- (void) setUpGame {
     [self createBoard];
     [self createPlayerOne];
     [self createPlayerTwo];
-    [[self ui] printBoard:self.board];
 }
 
 - (void) playGame {
-    self.board.slots = [self.playerOne makeMoveWith:self.board andUi:self.ui];
     [[self ui] printBoard:self.board];
+    [self makePlayerMove:self.playerOne];
     
     if (![BoardLogic isOver:self.board]) {
-        self.board.slots = [self.playerTwo makeMoveWith:self.board andUi:self.ui];
         [[self ui] printBoard:self.board];
+        [self makePlayerMove:self.playerTwo];
     }
+}
+
+- (void) makePlayerMove:(id<Player>)player {
+    self.board.slots = [player makeMoveWith:self.board andUi:self.ui];
 }
 
 - (void) endGame {

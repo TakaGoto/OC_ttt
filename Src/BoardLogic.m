@@ -86,10 +86,9 @@
     NSMutableDictionary *hasWinner = [[NSMutableDictionary alloc] init];
     NSInteger size = sqrt([board.slots count]);
     int boardSize = (int)size;
-    NSMutableArray *winningCombinations = [self generateWinCombinations:boardSize];
     NSMutableArray *possibleSlots = [[NSMutableArray alloc] initWithCapacity:boardSize];
 
-    for (NSArray *combination in winningCombinations) {
+    for (NSArray *combination in [self generateWinCombinations:boardSize]) {
         for (NSString *slot in combination) {
             [possibleSlots addObject:[board.slots objectAtIndex:[slot intValue]]];
         }
