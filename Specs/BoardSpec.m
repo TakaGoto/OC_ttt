@@ -27,6 +27,7 @@ OCDSpec2Context(BoardSpec) {
 
       It(@"replaces slot for a mark", ^{
           [board replaceSlot:5 withMark:@"X"];
+          [ExpectObj([board.slots objectAtIndex:5]) toBe:@"X"];
       });
   });
 

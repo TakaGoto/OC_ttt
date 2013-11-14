@@ -27,6 +27,14 @@
     [self.io write:stringBoard];
 }
 
+- (void) promptResult:(NSString *)gameState {
+    if ([gameState isEqualToString:@"tie"]) {
+        [self.io write:@"It is a tie!"];
+    } else {
+        [self.io write:[@"Winner is " stringByAppendingString:gameState]];
+    }
+}
+
 - (NSString*) promptBoardSize {
     [self.io write:@"Enter board size (3/4): "];
     NSString *userInput = [self validateBoardInput:[self.io readLine:@"board size"]];
@@ -55,6 +63,12 @@
 - (NSString*) promptPlayerTwoType {
     [self.io write:@"Enter player two type (h/c): "];
     return [self.io readLine:@"player type"];
+}
+
+- (BOOL) promptPlayAgain {
+    [self.io write:@"Would you like to play again? (y/n): "];
+    [self.io readLine:@"play again"];
+    return NO;
 }
 
 - (BOOL) validateInput:(NSString*)input with:(NSArray*)match {

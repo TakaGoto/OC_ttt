@@ -50,6 +50,16 @@ OCDSpec2Context(ConsoleIOSpec) {
           [ExpectStr(mockIO.text) toContain:@"Enter player one type (h/c): "];
       });
       
+      It(@"asks if user wants to play again", ^{
+          [ui promptPlayAgain];
+          [ExpectStr(mockIO.text) toContain:@"Would you like to play again? (y/n): "];
+      });
+      
+      It(@"returns user input if user wants to continue", ^{
+          BOOL userInput = [ui promptPlayAgain];
+          [ExpectBool(userInput) toBeFalse];
+      });
+      
       It(@"returns user input for player one type", ^{
           NSString* userInput = [ui promptPlayerOneType];
           [ExpectStr(userInput) toContain:@"h"];

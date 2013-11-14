@@ -53,77 +53,113 @@ OCDSpec2Context(BoardLogicSpec) {
               bigBoard = [[Board alloc] init:4];
           });
           
-          It(@"returns false if the board is not full", ^{
-              [ExpectBool([BoardLogic isFull:board]) toBeFalse];
-          });
-          
-          It(@"returns true if the board is full", ^{
-              [board replaceSlot:0 withMark:@"X"];
-              [board replaceSlot:1 withMark:@"O"];
-              [board replaceSlot:2 withMark:@"X"];
-              [board replaceSlot:3 withMark:@"X"];
-              [board replaceSlot:4 withMark:@"O"];
-              [board replaceSlot:5 withMark:@"O"];
-              [board replaceSlot:6 withMark:@"X"];
-              [board replaceSlot:7 withMark:@"X"];
-              [board replaceSlot:8 withMark:@"X"];
-              [ExpectBool([BoardLogic isFull:board]) toBeTrue];
-          });
-          
-          It(@"return true if the game is a tie", ^{
-              [board replaceSlot:0 withMark:@"X"];
-              [board replaceSlot:1 withMark:@"O"];
-              [board replaceSlot:2 withMark:@"X"];
-              [board replaceSlot:3 withMark:@"X"];
-              [board replaceSlot:4 withMark:@"O"];
-              [board replaceSlot:5 withMark:@"X"];
-              [board replaceSlot:6 withMark:@"O"];
-              [board replaceSlot:7 withMark:@"X"];
-              [board replaceSlot:8 withMark:@"O"];
-              [ExpectBool([BoardLogic isTie:board]) toBeTrue];
-
-          });
-          
-          It(@"returns false if the game is not a tie", ^{
-              [ExpectBool([BoardLogic isTie:board]) toBeFalse];
-          });
-          
-          It(@"return true if X is a winner on a 3x3", ^{
-              [board replaceSlot:0 withMark:@"X"];
-              [board replaceSlot:1 withMark:@"X"];
-              [board replaceSlot:2 withMark:@"X"];
-              [ExpectBool([BoardLogic hasWinner:board]) toBeTrue];
-          });
-          
-          It(@"return true if O is a winneron a 3x3", ^{
-              [board replaceSlot:0 withMark:@"O"];
-              [board replaceSlot:1 withMark:@"O"];
-              [board replaceSlot:2 withMark:@"O"];
-              [ExpectBool([BoardLogic hasWinner:board]) toBeTrue];
+          Describe(@"state of the game", ^{
+              It(@"returns 'tie' if the game is a tie", ^{
+                  [board replaceSlot:0 withMark:@"X"];
+                  [board replaceSlot:1 withMark:@"O"];
+                  [board replaceSlot:2 withMark:@"X"];
+                  [board replaceSlot:3 withMark:@"X"];
+                  [board replaceSlot:4 withMark:@"O"];
+                  [board replaceSlot:5 withMark:@"X"];
+                  [board replaceSlot:6 withMark:@"O"];
+                  [board replaceSlot:7 withMark:@"X"];
+                  [board replaceSlot:8 withMark:@"O"];
+                  NSString* result = [BoardLogic gameState:board];
+                  [ExpectStr(result) toBe:@"tie"];
+              });
               
+              It(@"returns 'X' if there is no tie and the winner is X", ^{
+                  [board replaceSlot:0 withMark:@"X"];
+                  [board replaceSlot:1 withMark:@"X"];
+                  [board replaceSlot:2 withMark:@"X"];
+                  NSString* result = [BoardLogic gameState:board];
+                  [ExpectStr(result) toBe:@"X"];
+              });
           });
           
-          It(@"return true if X is a winner on a 4x4", ^{
-              [bigBoard replaceSlot:4 withMark:@"X"];
-              [bigBoard replaceSlot:5 withMark:@"X"];
-              [bigBoard replaceSlot:6 withMark:@"X"];
-              [bigBoard replaceSlot:7 withMark:@"X"];
-              [ExpectBool([BoardLogic hasWinner:bigBoard]) toBeTrue];
-          });
-          
-          It(@"return true if O is a winneron a 4x4", ^{
-              [bigBoard replaceSlot:0 withMark:@"O"];
-              [bigBoard replaceSlot:5 withMark:@"O"];
-              [bigBoard replaceSlot:10 withMark:@"O"];
-              [bigBoard replaceSlot:15 withMark:@"O"];
-              [ExpectBool([BoardLogic hasWinner:bigBoard]) toBeTrue];
+          Describe(@"check if board is full", ^{
+              It(@"returns false if the board is not full", ^{
+                  [ExpectBool([BoardLogic isFull:board]) toBeFalse];
+              });
               
+              It(@"returns true if the board is full", ^{
+                  [board replaceSlot:0 withMark:@"X"];
+                  [board replaceSlot:1 withMark:@"O"];
+                  [board replaceSlot:2 withMark:@"X"];
+                  [board replaceSlot:3 withMark:@"X"];
+                  [board replaceSlot:4 withMark:@"O"];
+                  [board replaceSlot:5 withMark:@"O"];
+                  [board replaceSlot:6 withMark:@"X"];
+                  [board replaceSlot:7 withMark:@"X"];
+                  [board replaceSlot:8 withMark:@"X"];
+                  [ExpectBool([BoardLogic isFull:board]) toBeTrue];
+              });
           });
           
-          It(@"return false if there is no winner", ^{
-              [ExpectBool([BoardLogic hasWinner:board]) toBeFalse];
+          Describe(@"check if game is a tie", ^{
+              It(@"return true if the game is a tie", ^{
+                  [board replaceSlot:0 withMark:@"X"];
+                  [board replaceSlot:1 withMark:@"O"];
+                  [board replaceSlot:2 withMark:@"X"];
+                  [board replaceSlot:3 withMark:@"X"];
+                  [board replaceSlot:4 withMark:@"O"];
+                  [board replaceSlot:5 withMark:@"X"];
+                  [board replaceSlot:6 withMark:@"O"];
+                  [board replaceSlot:7 withMark:@"X"];
+                  [board replaceSlot:8 withMark:@"O"];
+                  [ExpectBool([BoardLogic isTie:board]) toBeTrue];
+                  
+              });
+              
+              It(@"returns false if the game is not a tie", ^{
+                  [ExpectBool([BoardLogic isTie:board]) toBeFalse];
+              });
           });
           
+          Describe(@"check if game has a winner", ^{
+              It(@"return true if X is a winner on a 3x3", ^{
+                  [board replaceSlot:0 withMark:@"X"];
+                  [board replaceSlot:1 withMark:@"X"];
+                  [board replaceSlot:2 withMark:@"X"];
+                  NSMutableDictionary *hasWinner = [BoardLogic hasWinner:board];
+                  [ExpectObj([hasWinner objectForKey:@"hasWinner"]) toBe:@"YES"];
+                  [ExpectObj([hasWinner objectForKey:@"winner"]) toBe:@"X"];
+              });
+              
+              It(@"return true if O is a winneron a 3x3", ^{
+                  [board replaceSlot:0 withMark:@"O"];
+                  [board replaceSlot:1 withMark:@"O"];
+                  [board replaceSlot:2 withMark:@"O"];
+                  NSMutableDictionary *hasWinner = [BoardLogic hasWinner:board];
+                  [ExpectObj([hasWinner objectForKey:@"hasWinner"]) toBe:@"YES"];
+                  [ExpectObj([hasWinner objectForKey:@"winner"]) toBe:@"O"];
+              });
+              
+              It(@"return true if X is a winner on a 4x4", ^{
+                  [bigBoard replaceSlot:4 withMark:@"X"];
+                  [bigBoard replaceSlot:5 withMark:@"X"];
+                  [bigBoard replaceSlot:6 withMark:@"X"];
+                  [bigBoard replaceSlot:7 withMark:@"X"];
+                  NSMutableDictionary *hasWinner = [BoardLogic hasWinner:bigBoard];
+                  [ExpectObj([hasWinner objectForKey:@"hasWinner"]) toBe:@"YES"];
+                  [ExpectObj([hasWinner objectForKey:@"winner"]) toBe:@"X"];
+              });
+              
+              It(@"return true if O is a winneron a 4x4", ^{
+                  [bigBoard replaceSlot:0 withMark:@"O"];
+                  [bigBoard replaceSlot:5 withMark:@"O"];
+                  [bigBoard replaceSlot:10 withMark:@"O"];
+                  [bigBoard replaceSlot:15 withMark:@"O"];
+                  NSMutableDictionary *hasWinner = [BoardLogic hasWinner:bigBoard];
+                  [ExpectObj([hasWinner objectForKey:@"hasWinner"]) toBe:@"YES"];
+                  [ExpectObj([hasWinner objectForKey:@"winner"]) toBe:@"O"];
+              });
+              
+              It(@"return false if there is no winner", ^{
+                  NSMutableDictionary *hasWinner = [BoardLogic hasWinner:board];
+                  [ExpectObj([hasWinner objectForKey:@"hasWinner"]) toBe:@"NO"];
+              });
+          });
       });
     
   });

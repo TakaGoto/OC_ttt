@@ -1,4 +1,5 @@
 #import "Game.h"
+#import "BoardLogic.h"
 #import "Players/HumanPlayer.h"
 #import "Players/ComputerPlayer.h"
 
@@ -48,6 +49,14 @@
     NSString *move = [[self ui] promptMove];
     [[self board] replaceSlot:[move intValue] withMark:self.playerOne.mark];
     [[self ui] printBoard:self.board];
+}
+
+- (void) endGame {
+    [[self ui] promptResult:[BoardLogic gameState:self.board]];
+    if ([[self ui] promptPlayAgain]) {
+        [self startGame];
+    }
+    [[self ui] promptGoodBye];
 }
 
 @end

@@ -14,6 +14,8 @@
 
 - (void) printBoard:(Board *)board;
 
+- (void) promptResult:(NSString *)gameState;
+
 - (NSString*) promptBoardSize;
 
 - (NSString*) validateBoardInput:(NSString*)input;
@@ -23,6 +25,8 @@
 - (NSString*) promptPlayerOneType;
 
 - (NSString*) promptPlayerTwoType;
+
+- (BOOL) promptPlayAgain;
 
 - (BOOL) validateInput:(NSString*)input with:(NSArray*)match;
 

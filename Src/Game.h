@@ -22,4 +22,6 @@
 
 - (void) playGame;
 
+- (void) endGame;
+
 @end

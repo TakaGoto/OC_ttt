@@ -19,11 +19,16 @@ OCDSpec2Context(GameSpec) {
         
         BeforeEach(^{
             [game startGame];
-            [game playGame];
         });
        
         It(@"prompts user to enter move", ^{
+            [game playGame];
             [ExpectBool(mockUi.promptedMove) toBeTrue];
+        });
+        
+        It(@"makes a move", ^{
+            [game playGame];
+            [ExpectObj([game.board.slots objectAtIndex:5]) toBe:@"X"];
         });
         
     });
@@ -55,6 +60,27 @@ OCDSpec2Context(GameSpec) {
         });
 
     });
+      
+      Describe(@"ends the game", ^{
+          
+          It(@"prompts user good bye", ^{
+              [game endGame];
+              [ExpectBool(mockUi.promptedGoodBye) toBeTrue];
+          });
+          
+          It(@"prompts if the user would like to play again", ^{
+              [game endGame];
+              [ExpectBool(mockUi.promptedPlayAgain) toBeTrue];
+          });
+          
+          It(@"displays result", ^{
+              [game.board replaceSlot:0 withMark:@"X"];
+              [game.board replaceSlot:1 withMark:@"X"];
+              [game.board replaceSlot:2 withMark:@"X"];
+              [game endGame];
+              [ExpectBool(mockUi.promptedWinner) toBeTrue];
+          });
+      });
       
       Describe(@"game has instances ", ^{
           

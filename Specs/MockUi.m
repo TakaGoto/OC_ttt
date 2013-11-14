@@ -11,6 +11,9 @@
 @synthesize promptedBoardSize;
 @synthesize promptedPlayerOneType;
 @synthesize promptedPlayerTwoType;
+@synthesize promptedPlayAgain;
+@synthesize promptedTie;
+@synthesize promptedWinner;
 
 
 - (void) welcomeUser {
@@ -25,9 +28,17 @@
     self.printedBoard = YES;
 }
 
+- (void) promptResult:(NSString *)gameState {
+    if ([gameState isEqualToString:@"tie"]) {
+        self.promptedTie = YES;
+    } else {
+        self.promptedWinner = YES;
+    }
+}
+
 - (NSString*) promptMove {
     self.promptedMove = YES;
-    return @"1";
+    return @"5";
 }
 
 - (NSString*) promptBoardSize {
@@ -43,6 +54,11 @@
 - (NSString*) promptPlayerTwoType {
     self.promptedPlayerTwoType = YES;
     return @"h";
+}
+
+- (NSString*) promptPlayAgain {
+    self.promptedPlayAgain = YES;
+    return @"n";
 }
 
 - (BOOL) validateInput:(NSString *)input with:(NSArray *)word {

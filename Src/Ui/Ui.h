@@ -7,6 +7,8 @@
 
 - (void) promptGoodBye;
 
+- (void) promptResult:(NSString*)gameState;
+
 - (void) printBoard:(Board*)board;
 
 - (NSString*) promptMove;
@@ -16,6 +18,8 @@
 - (NSString*) promptPlayerOneType;
 
 - (NSString*) promptPlayerTwoType;
+
+- (BOOL) promptPlayAgain;
 
 - (BOOL) validateInput:(NSString*)input with:(NSArray*)match;
 

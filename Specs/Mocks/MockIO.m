@@ -15,6 +15,8 @@
         return [NSString stringWithFormat:@"h"];
     } else if ([input isEqual: @"player move"]) {
         return [NSString stringWithFormat:@"5"];
+    } else if ([input isEqual: @"play again"]) {
+        return [NSString stringWithFormat:@"n"];
     } else {
         return [NSString stringWithFormat:@"mock"];
     }

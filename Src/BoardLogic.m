@@ -56,6 +56,14 @@
     return (boardSize * boardSize);
 }
 
++ (NSString*) gameState:(Board *)board {
+    if ([self isTie:board]) {
+        return @"tie";
+    } else {
+        return [[self hasWinner:board] objectForKey:@"winner"];
+    }
+}
+
 + (BOOL) isFull:(Board *)board {
     for (NSObject *slot in board.slots) {
         if ([slot isNotEqualTo:@"X"] && [slot isNotEqualTo:@"O"]) {
@@ -66,10 +74,12 @@
 }
 
 + (BOOL) isTie:(Board *)board {
-    return ![self hasWinner:board] && [self isFull:board];
+    NSMutableDictionary* hasWinner = [self hasWinner:board];
+    return [[hasWinner objectForKey:@"hasWinner"] isEqualToString:@"NO"] && [self isFull:board];
 }
 
-+ (BOOL) hasWinner:(Board *)board {
++ (NSMutableDictionary*) hasWinner:(Board *)board {
+    NSMutableDictionary *hasWinner = [[NSMutableDictionary alloc] init];
     NSInteger size = sqrt([board.slots count]);
     int boardSize = (int)size;
     NSMutableArray *winningCombinations = [self generateWinCombinations:boardSize];
@@ -84,12 +94,15 @@
             [[possibleSlots componentsJoinedByString:@""]  isEqual: @"OOO"] ||
             [[possibleSlots componentsJoinedByString:@""]  isEqual: @"XXXX"] ||
             [[possibleSlots componentsJoinedByString:@""]  isEqual: @"OOOO"]) {
-            return true;
+            [hasWinner setObject:@"YES" forKey:@"hasWinner"];
+            [hasWinner setObject:[possibleSlots objectAtIndex:0] forKey:@"winner"];
+            return hasWinner;
         }
 
         possibleSlots = [[NSMutableArray alloc] initWithCapacity:boardSize];
     }
-    return false;
+    [hasWinner setObject:@"NO" forKey:@"hasWinner"];
+    return hasWinner;
 }
 
 @end

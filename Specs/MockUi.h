@@ -9,13 +9,18 @@
 @property BOOL promptedBoardSize;
 @property BOOL promptedPlayerOneType;
 @property BOOL promptedPlayerTwoType;
+@property BOOL promptedPlayAgain;
 @property BOOL printedBoard;
+@property BOOL promptedTie;
+@property BOOL promptedWinner;
 
 - (void) welcomeUser;
 
 - (void) promptGoodBye;
 
 - (void) printBoard:(Board *)board;
+
+- (void) promptResult:(NSString *)gameState;
 
 - (NSString*) promptMove;
 
@@ -24,6 +29,8 @@
 - (NSString*) promptPlayerOneType;
 
 - (NSString*) promptPlayerTwoType;
+
+- (NSString*) promptPlayAgain;
 
 - (BOOL) validateInput:(NSString*)input with:(NSArray *)match;
 

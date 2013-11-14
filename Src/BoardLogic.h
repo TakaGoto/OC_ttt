@@ -11,10 +11,12 @@
 
 +(void) diagonalCombinations:(int)boardSize withCombinations:(NSMutableArray*)combinations;
 
++(NSString*) gameState:(Board*)board;
+
 +(BOOL) isFull:(Board*)board;
 
 +(BOOL) isTie:(Board*)board;
 
-+(BOOL) hasWinner:(Board*)board;
++(NSMutableDictionary*) hasWinner:(Board*)board;
 
 @end
