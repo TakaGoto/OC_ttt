@@ -10,8 +10,8 @@
 }
 
 - (NSString*) readLine:(NSString*)input {
-    char buf[80];
-    fgets(buf, 80, stdin);
+    char buf[1];
+    gets(buf);
     NSString *userInput = [NSString stringWithUTF8String:buf];
     return userInput;
 }

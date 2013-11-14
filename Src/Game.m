@@ -2,6 +2,7 @@
 #import "BoardLogic.h"
 #import "Players/HumanPlayer.h"
 #import "Players/ComputerPlayer.h"
+#import "Players/PlayerFactory.h"
 
 @implementation Game
 
@@ -19,20 +20,12 @@
 
 - (void) createPlayerOne {
     NSString *playerType = [[self ui] promptPlayerOneType];
-    if ([playerType isEqualToString:@"h"]) {
-        self.playerOne = [[HumanPlayer alloc] init:@"X"];
-    } else {
-        self.playerOne = [[ComputerPlayer alloc] init:@"X"];
-    }
+    self.playerOne = [PlayerFactory create:playerType withMark:@"X"];
 }
 
 - (void) createPlayerTwo {
     NSString *playerType = [[self ui] promptPlayerTwoType];
-    if ([playerType isEqualToString:@"h"]) {
-        self.playerTwo = [[HumanPlayer alloc] init:@"O"];
-    } else {
-        self.playerTwo = [[ComputerPlayer alloc] init:@"O"];
-    }
+    self.playerTwo = [PlayerFactory create:playerType withMark:@"O"];
 }
 
 - (void) play {
@@ -54,13 +47,11 @@
 }
 
 - (void) playGame {
-    NSString *move = [[self ui] promptMove];
-    [[self board] replaceSlot:[move intValue]-1 withMark:self.playerOne.mark];
+    self.board.slots = [self.playerOne makeMoveWith:self.board andUi:self.ui];
     [[self ui] printBoard:self.board];
     
     if (![BoardLogic isOver:self.board]) {
-        move = [[self ui] promptMove];
-        [[self board] replaceSlot:[move intValue]-1 withMark:self.playerTwo.mark];
+        self.board.slots = [self.playerTwo makeMoveWith:self.board andUi:self.ui];
         [[self ui] printBoard:self.board];
     }
 }

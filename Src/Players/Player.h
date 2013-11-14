@@ -1,4 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "../Ui/Ui.h"
+#import "../board.h"
 
 @protocol Player
 
@@ -6,6 +8,6 @@
 
 - (id) init:(NSString*)mark;
 
-- (NSArray*) makeMoveWith:(NSString*)board andMove:(NSString*)move;
+- (NSMutableArray*) makeMoveWith:(Board*)board andUi:(id<Ui>)ui;
 
 @end

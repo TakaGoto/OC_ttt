@@ -18,6 +18,7 @@ OCDSpec2Context(GameSpec) {
     Describe(@"plays the game", ^{
         
         BeforeEach(^{
+            [game startGame];
             [game playGame];
         });
        
@@ -26,8 +27,6 @@ OCDSpec2Context(GameSpec) {
         });
         
         It(@"makes a move", ^{
-            [game startGame];
-            [game playGame];
             [ExpectObj([game.board.slots objectAtIndex:4]) toBe:@"O"];
         });
         

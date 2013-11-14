@@ -39,6 +39,8 @@
 		507C1B7418332350006A7319 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50989A8B1832B42A00563467 /* Cocoa.framework */; };
 		50989A8C1832B42A00563467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50989A8B1832B42A00563467 /* Cocoa.framework */; };
 		50989A8F1832B42A00563467 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50989A8E1832B42A00563467 /* main.m */; };
+		50CC373F18355956003745E4 /* PlayerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CC373E18355956003745E4 /* PlayerFactory.m */; };
+		50CC374118355B1D003745E4 /* PlayerFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CC374018355B1D003745E4 /* PlayerFactorySpec.m */; };
 		50EBA9771834289400C88342 /* BoardLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EBA9761834289400C88342 /* BoardLogic.m */; };
 		E8A238F4C4884561BF965874 /* libPods-test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 896A4E496793478E8BC26B70 /* libPods-test.a */; };
 /* End PBXBuildFile section */
@@ -98,6 +100,9 @@
 		50989A8B1832B42A00563467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		50989A8E1832B42A00563467 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50989A911832B42A00563467 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		50CC373D18355956003745E4 /* PlayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerFactory.h; path = Src/Players/PlayerFactory.h; sourceTree = "<group>"; };
+		50CC373E18355956003745E4 /* PlayerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerFactory.m; path = Src/Players/PlayerFactory.m; sourceTree = "<group>"; };
+		50CC374018355B1D003745E4 /* PlayerFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerFactorySpec.m; sourceTree = "<group>"; };
 		50EBA9751834289400C88342 /* BoardLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoardLogic.h; path = Src/BoardLogic.h; sourceTree = "<group>"; };
 		50EBA9761834289400C88342 /* BoardLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoardLogic.m; path = Src/BoardLogic.m; sourceTree = "<group>"; };
 		896A4E496793478E8BC26B70 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +193,8 @@
 		507C1B2C1833077A006A7319 /* Players */ = {
 			isa = PBXGroup;
 			children = (
+				50CC373D18355956003745E4 /* PlayerFactory.h */,
+				50CC373E18355956003745E4 /* PlayerFactory.m */,
 				507C1B2D18330780006A7319 /* ComputerPlayer.h */,
 				507C1B2E18330780006A7319 /* ComputerPlayer.m */,
 				507C1B2F18330780006A7319 /* HumanPlayer.h */,
@@ -265,6 +272,7 @@
 				507C1B201832ED37006A7319 /* HumanSpec.m */,
 				507C1B261832F094006A7319 /* ComputerSpec.m */,
 				50182D7618353C76002A7C64 /* ConsoleUISpec.m */,
+				50CC374018355B1D003745E4 /* PlayerFactorySpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -536,12 +544,14 @@
 				50182D7718353C76002A7C64 /* ConsoleUISpec.m in Sources */,
 				50182D8218353D4E002A7C64 /* ConsoleIO.m in Sources */,
 				50182D8318353D4E002A7C64 /* ConsoleUi.m in Sources */,
+				50CC374118355B1D003745E4 /* PlayerFactorySpec.m in Sources */,
 				50989A8F1832B42A00563467 /* main.m in Sources */,
 				50182D7218353757002A7C64 /* MockUi.m in Sources */,
 				507C1B211832ED37006A7319 /* HumanSpec.m in Sources */,
 				502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */,
 				507C1B3218330780006A7319 /* ComputerPlayer.m in Sources */,
 				50182D7518353C14002A7C64 /* MockIO.m in Sources */,
+				50CC373F18355956003745E4 /* PlayerFactory.m in Sources */,
 				507C1B4218330EDA006A7319 /* GameSpec.m in Sources */,
 				50EBA9771834289400C88342 /* BoardLogic.m in Sources */,
 			);

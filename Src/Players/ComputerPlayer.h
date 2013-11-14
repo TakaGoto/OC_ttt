@@ -6,6 +6,6 @@
 
 - (id) init:(NSString*)m;
 
-- (NSArray*) makeMoveWith:(NSString*)board andMove:(NSString*)move;
+- (NSMutableArray*) makeMoveWith:(Board*)board andUi:(id<Ui>)ui;
 
 @end
