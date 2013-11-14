@@ -15,6 +15,19 @@ OCDSpec2Context(GameSpec) {
         game = [[Game alloc] initWithUi:mockUi];
     });
       
+    Describe(@"plays the game", ^{
+        
+        BeforeEach(^{
+            [game startGame];
+            [game playGame];
+        });
+       
+        It(@"prompts user to enter move", ^{
+            [ExpectBool(mockUi.promptedMove) toBeTrue];
+        });
+        
+    });
+      
     Describe(@"starts the game", ^{
         
         BeforeEach(^{
@@ -23,10 +36,6 @@ OCDSpec2Context(GameSpec) {
         
         It(@"displays welcome message", ^{
             [ExpectBool(mockUi.welcomedUser) toBeTrue];
-        });
-        
-        It(@"prompts user to enter move", ^{
-            [ExpectBool(mockUi.promptedMove) toBeTrue];
         });
         
         It(@"prompts user to enter board size", ^{

@@ -27,22 +27,22 @@
 
 - (NSString*) promptMove {
     self.promptedMove = YES;
-    return [NSString stringWithFormat:@"mock"];
+    return @"1";
 }
 
 - (NSString*) promptBoardSize {
     self.promptedBoardSize = YES;
-    return [NSString stringWithFormat:@"prompted board size"];
+    return @"3";
 }
 
 - (NSString*) promptPlayerOneType {
     self.promptedPlayerOneType = YES;
-    return [NSString stringWithFormat:@"prompted player one type"];
+    return @"h";
 }
 
 - (NSString*) promptPlayerTwoType {
     self.promptedPlayerTwoType = YES;
-    return [NSString stringWithFormat:@"prompted player two type"];
+    return @"h";
 }
 
 - (BOOL) validateInput:(NSString *)input with:(NSArray *)word {

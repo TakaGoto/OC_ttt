@@ -1,17 +1,24 @@
 #import <Foundation/Foundation.h>
-#import "../board.h"
+#import "IO.h"
+#import "Ui.h"
 
-@protocol Ui
+@interface ConsoleUi : NSObject <Ui>
+
+@property (nonatomic, strong) id<IO> io;
+
+- (id) init:(id<IO>)io;
 
 - (void) welcomeUser;
 
 - (void) promptGoodBye;
 
-- (void) printBoard:(Board*)board;
-
-- (NSString*) promptMove;
+- (void) printBoard:(Board *)board;
 
 - (NSString*) promptBoardSize;
+
+- (NSString*) validateBoardInput:(NSString*)input;
+
+- (NSString*) promptMove;
 
 - (NSString*) promptPlayerOneType;
 

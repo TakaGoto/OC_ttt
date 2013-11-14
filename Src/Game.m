@@ -19,18 +19,18 @@
 - (void) createPlayerOne {
     NSString *playerType = [[self ui] promptPlayerOneType];
     if ([playerType isEqualToString:@"h"]) {
-        self.playerOne = [[HumanPlayer alloc] init];
+        self.playerOne = [[HumanPlayer alloc] init:@"X"];
     } else {
-        self.playerOne = [[ComputerPlayer alloc] init];
+        self.playerOne = [[ComputerPlayer alloc] init:@"X"];
     }
 }
 
 - (void) createPlayerTwo {
     NSString *playerType = [[self ui] promptPlayerTwoType];
     if ([playerType isEqualToString:@"h"]) {
-        self.playerTwo = [[HumanPlayer alloc] init];
+        self.playerTwo = [[HumanPlayer alloc] init:@"O"];
     } else {
-        self.playerTwo = [[ComputerPlayer alloc] init];
+        self.playerTwo = [[ComputerPlayer alloc] init:@"O"];
     }
 }
 
@@ -41,6 +41,13 @@
     [self createPlayerTwo];
     [[self ui] printBoard:self.board];
     [[self ui] promptMove];
+    [self playGame];
+}
+
+- (void) playGame {
+    NSString *move = [[self ui] promptMove];
+    [[self board] replaceSlot:[move intValue] withMark:self.playerOne.mark];
+    [[self ui] printBoard:self.board];
 }
 
 @end
