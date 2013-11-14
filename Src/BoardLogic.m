@@ -64,6 +64,10 @@
     }
 }
 
++ (BOOL) isOver:(Board *)board {
+    return [self isTie:board] || [[[self hasWinner:board] objectForKey:@"hasWinner"]isEqualToString:@"YES"];
+}
+
 + (BOOL) isFull:(Board *)board {
     for (NSObject *slot in board.slots) {
         if ([slot isNotEqualTo:@"X"] && [slot isNotEqualTo:@"O"]) {

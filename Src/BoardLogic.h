@@ -13,6 +13,8 @@
 
 +(NSString*) gameState:(Board*)board;
 
++(BOOL) isOver:(Board*)board;
+
 +(BOOL) isFull:(Board*)board;
 
 +(BOOL) isTie:(Board*)board;

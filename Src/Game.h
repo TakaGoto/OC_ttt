@@ -18,6 +18,8 @@
 
 - (void) createPlayerTwo;
 
+- (void) play;
+
 - (void) startGame;
 
 - (void) playGame;

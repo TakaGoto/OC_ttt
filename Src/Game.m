@@ -35,20 +35,35 @@
     }
 }
 
+- (void) play {
+    [self startGame];
+    
+    while (![BoardLogic isOver:self.board]) {
+        [self playGame];
+    }
+    
+    [self endGame];
+}
+
 - (void) startGame {
     [[self ui] welcomeUser];
     [self createBoard];
     [self createPlayerOne];
     [self createPlayerTwo];
     [[self ui] printBoard:self.board];
-    [[self ui] promptMove];
     [self playGame];
 }
 
 - (void) playGame {
     NSString *move = [[self ui] promptMove];
-    [[self board] replaceSlot:[move intValue] withMark:self.playerOne.mark];
+    [[self board] replaceSlot:[move intValue]-1 withMark:self.playerOne.mark];
     [[self ui] printBoard:self.board];
+    
+    if (![BoardLogic isOver:self.board]) {
+        move = [[self ui] promptMove];
+        [[self board] replaceSlot:[move intValue]-1 withMark:self.playerTwo.mark];
+        [[self ui] printBoard:self.board];
+    }
 }
 
 - (void) endGame {

@@ -53,7 +53,24 @@ OCDSpec2Context(BoardLogicSpec) {
               bigBoard = [[Board alloc] init:4];
           });
           
+          Describe(@"check is game is over", ^{
+              
+              It(@"returns true if the board is full", ^{
+                  [board replaceSlot:0 withMark:@"X"];
+                  [board replaceSlot:1 withMark:@"O"];
+                  [board replaceSlot:2 withMark:@"X"];
+                  [board replaceSlot:3 withMark:@"X"];
+                  [board replaceSlot:4 withMark:@"O"];
+                  [board replaceSlot:5 withMark:@"X"];
+                  [board replaceSlot:6 withMark:@"O"];
+                  [board replaceSlot:7 withMark:@"X"];
+                  [board replaceSlot:8 withMark:@"O"];
+                  [ExpectBool([BoardLogic isOver:board]) toBeTrue];
+              });
+          });
+          
           Describe(@"state of the game", ^{
+              
               It(@"returns 'tie' if the game is a tie", ^{
                   [board replaceSlot:0 withMark:@"X"];
                   [board replaceSlot:1 withMark:@"O"];
@@ -78,6 +95,7 @@ OCDSpec2Context(BoardLogicSpec) {
           });
           
           Describe(@"check if board is full", ^{
+              
               It(@"returns false if the board is not full", ^{
                   [ExpectBool([BoardLogic isFull:board]) toBeFalse];
               });
@@ -97,6 +115,7 @@ OCDSpec2Context(BoardLogicSpec) {
           });
           
           Describe(@"check if game is a tie", ^{
+              
               It(@"return true if the game is a tie", ^{
                   [board replaceSlot:0 withMark:@"X"];
                   [board replaceSlot:1 withMark:@"O"];
@@ -117,10 +136,11 @@ OCDSpec2Context(BoardLogicSpec) {
           });
           
           Describe(@"check if game has a winner", ^{
+              
               It(@"return true if X is a winner on a 3x3", ^{
-                  [board replaceSlot:0 withMark:@"X"];
-                  [board replaceSlot:1 withMark:@"X"];
-                  [board replaceSlot:2 withMark:@"X"];
+                  [board replaceSlot:3 withMark:@"X"];
+                  [board replaceSlot:4 withMark:@"X"];
+                  [board replaceSlot:5 withMark:@"X"];
                   NSMutableDictionary *hasWinner = [BoardLogic hasWinner:board];
                   [ExpectObj([hasWinner objectForKey:@"hasWinner"]) toBe:@"YES"];
                   [ExpectObj([hasWinner objectForKey:@"winner"]) toBe:@"X"];

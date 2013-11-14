@@ -1,10 +1,9 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import "ConsoleUi.h"
-#import "board.h"
 #import "MockIO.h"
 #import "ConsoleIO.h"
 
-OCDSpec2Context(ConsoleIOSpec) {
+OCDSpec2Context(ConsoleUISpec) {
 
   Describe(@"console input output", ^{
         __block MockIO *mockIO;
@@ -29,17 +28,17 @@ OCDSpec2Context(ConsoleIOSpec) {
           [ui promptMove];
           [ExpectStr(mockIO.text) toContain:@"Make your move: "];
       });
-      
+
       It(@"waits for user input to make a move", ^{
           NSString* userInput = [ui promptMove];
           [ExpectStr(userInput) toContain:@"5"];
       });
-      
+
       It(@"asks for board size", ^{
           [ui promptBoardSize];
           [ExpectStr(mockIO.text) toContain:@"Enter board size (3/4): "];
       });
-      
+
       It(@"returns user input for board size", ^{
           NSString* userInput = [ui promptBoardSize];
           [ExpectStr(userInput) toContain:@"3"];
@@ -49,22 +48,22 @@ OCDSpec2Context(ConsoleIOSpec) {
           [ui promptPlayerOneType];
           [ExpectStr(mockIO.text) toContain:@"Enter player one type (h/c): "];
       });
-      
+
       It(@"asks if user wants to play again", ^{
           [ui promptPlayAgain];
           [ExpectStr(mockIO.text) toContain:@"Would you like to play again? (y/n): "];
       });
-      
+
       It(@"returns user input if user wants to continue", ^{
           BOOL userInput = [ui promptPlayAgain];
           [ExpectBool(userInput) toBeFalse];
       });
-      
+
       It(@"returns user input for player one type", ^{
           NSString* userInput = [ui promptPlayerOneType];
           [ExpectStr(userInput) toContain:@"h"];
       });
-      
+
       It(@"prints board", ^{
           __block Board *board;
           board = [[Board alloc] init:3];

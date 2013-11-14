@@ -18,17 +18,20 @@ OCDSpec2Context(GameSpec) {
     Describe(@"plays the game", ^{
         
         BeforeEach(^{
-            [game startGame];
+            [game playGame];
         });
        
         It(@"prompts user to enter move", ^{
-            [game playGame];
             [ExpectBool(mockUi.promptedMove) toBeTrue];
         });
         
         It(@"makes a move", ^{
-            [game playGame];
-            [ExpectObj([game.board.slots objectAtIndex:5]) toBe:@"X"];
+            [game startGame];
+            [ExpectObj([game.board.slots objectAtIndex:4]) toBe:@"O"];
+        });
+        
+        It(@"displays the board", ^{
+            [ExpectBool(mockUi.printedBoard) toBeTrue];
         });
         
     });
