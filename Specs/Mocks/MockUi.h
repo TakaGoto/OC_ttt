@@ -30,7 +30,7 @@
 
 - (NSString*) promptPlayerTwoType;
 
-- (NSString*) promptPlayAgain;
+- (BOOL) promptPlayAgain;
 
 - (BOOL) validateInput:(NSString*)input with:(NSArray *)match;
 

@@ -27,6 +27,7 @@ OCDSpec2Context(GameSpec) {
         
         It(@"makes a move", ^{
             [game startGame];
+            [game playGame];
             [ExpectObj([game.board.slots objectAtIndex:4]) toBe:@"O"];
         });
         
@@ -77,9 +78,11 @@ OCDSpec2Context(GameSpec) {
           });
           
           It(@"displays result", ^{
-              [game.board replaceSlot:0 withMark:@"X"];
-              [game.board replaceSlot:1 withMark:@"X"];
-              [game.board replaceSlot:2 withMark:@"X"];
+              Board* newBoard = [[Board alloc] init:3];
+              [newBoard replaceSlot:0 withMark:@"X"];
+              [newBoard replaceSlot:1 withMark:@"X"];
+              [newBoard replaceSlot:2 withMark:@"X"];
+              game.board = newBoard;
               [game endGame];
               [ExpectBool(mockUi.promptedWinner) toBeTrue];
           });

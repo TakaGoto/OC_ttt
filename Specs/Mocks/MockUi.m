@@ -56,9 +56,9 @@
     return @"h";
 }
 
-- (NSString*) promptPlayAgain {
+- (BOOL) promptPlayAgain {
     self.promptedPlayAgain = YES;
-    return @"n";
+    return NO;
 }
 
 - (BOOL) validateInput:(NSString *)input with:(NSArray *)word {

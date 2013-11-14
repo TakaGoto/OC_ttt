@@ -67,7 +67,7 @@
 
 - (BOOL) promptPlayAgain {
     [self.io write:@"Would you like to play again? (y/n): "];
-    [self.io readLine:@"play again"];
+    NSString* userInput = [self.io readLine:@"play again"];
     return NO;
 }
 

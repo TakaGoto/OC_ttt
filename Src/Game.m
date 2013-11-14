@@ -37,7 +37,7 @@
 
 - (void) play {
     [self startGame];
-    
+
     while (![BoardLogic isOver:self.board]) {
         [self playGame];
     }
@@ -51,7 +51,6 @@
     [self createPlayerOne];
     [self createPlayerTwo];
     [[self ui] printBoard:self.board];
-    [self playGame];
 }
 
 - (void) playGame {
@@ -69,7 +68,7 @@
 - (void) endGame {
     [[self ui] promptResult:[BoardLogic gameState:self.board]];
     if ([[self ui] promptPlayAgain]) {
-        [self startGame];
+        [self play];
     }
     [[self ui] promptGoodBye];
 }
