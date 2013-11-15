@@ -60,14 +60,13 @@
 }
 
 - (NSString*) promptBoardSize {
-    [self.io write:@"Enter board size (3/4): "];
+    [self.io write:@"Enter board size: "];
     return [self validateBoardInput:[self.io readLine:@"board size"]];
 }
 
 - (NSString*) validateBoardInput:(NSString*)input {
-    NSArray *matches = [NSArray arrayWithObjects:@"3", @"4", nil];
-    while ([self validateInput:input with:matches]) {
-        [self.io write:@"Please enter correct board size (3/4): "];
+    while ([input intValue] < 2) {
+        [self.io write:@"Please enter correct board size, must be greater than 1: "];
         input = [self.io readLine:@"board size"];
     }
     return input;

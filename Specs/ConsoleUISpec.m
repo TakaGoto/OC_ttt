@@ -41,7 +41,7 @@ OCDSpec2Context(ConsoleUISpec) {
 
       It(@"asks for board size", ^{
           [ui promptBoardSize];
-          [ExpectStr(mockIO.text) toContain:@"Enter board size (3/4): "];
+          [ExpectStr(mockIO.text) toContain:@"Enter board size: "];
       });
 
       It(@"returns user input for board size", ^{
