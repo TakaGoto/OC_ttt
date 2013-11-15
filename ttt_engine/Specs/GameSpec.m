@@ -1,6 +1,5 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import "MockUi.h"
-#import "ConsoleUi.h"
 #import "Game.h"
 
 OCDSpec2Context(GameSpec) {

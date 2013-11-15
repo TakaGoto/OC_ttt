@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		50182D7218353757002A7C64 /* MockUi.m in Sources */ = {isa = PBXBuildFile; fileRef = 50182D7118353757002A7C64 /* MockUi.m */; };
 		50182D7518353C14002A7C64 /* MockIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 50182D7418353C14002A7C64 /* MockIO.m */; };
-		50182D7718353C76002A7C64 /* ConsoleUISpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 50182D7618353C76002A7C64 /* ConsoleUISpec.m */; };
-		50182D8218353D4E002A7C64 /* ConsoleIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 50182D7F18353D4E002A7C64 /* ConsoleIO.m */; };
-		50182D8318353D4E002A7C64 /* ConsoleUi.m in Sources */ = {isa = PBXBuildFile; fileRef = 50182D8118353D4E002A7C64 /* ConsoleUi.m */; };
 		502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 502E04461832B49800BD2EA2 /* BoardSpec.m */; };
+		5030EFB91836BC9100927BE9 /* AiSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5030EFB81836BC9100927BE9 /* AiSpec.m */; };
+		5030EFBF1836C49000927BE9 /* Ai.m in Sources */ = {isa = PBXBuildFile; fileRef = 5030EFBE1836C49000927BE9 /* Ai.m */; };
 		5058F15C1833ECFA00ABF92D /* BoardLogicSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5058F15B1833ECFA00ABF92D /* BoardLogicSpec.m */; };
 		5058F168183425EA00ABF92D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50989A8B1832B42A00563467 /* Cocoa.framework */; };
 		5058F183183425EA00ABF92D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5058F182183425EA00ABF92D /* XCTest.framework */; };
@@ -67,12 +66,10 @@
 		50182D7118353757002A7C64 /* MockUi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockUi.m; path = Mocks/MockUi.m; sourceTree = "<group>"; };
 		50182D7318353C14002A7C64 /* MockIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockIO.h; path = Mocks/MockIO.h; sourceTree = "<group>"; };
 		50182D7418353C14002A7C64 /* MockIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockIO.m; path = Mocks/MockIO.m; sourceTree = "<group>"; };
-		50182D7618353C76002A7C64 /* ConsoleUISpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsoleUISpec.m; sourceTree = "<group>"; };
-		50182D7E18353D4E002A7C64 /* ConsoleIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleIO.h; path = Src/Ui/ConsoleIO.h; sourceTree = "<group>"; };
-		50182D7F18353D4E002A7C64 /* ConsoleIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleIO.m; path = Src/Ui/ConsoleIO.m; sourceTree = "<group>"; };
-		50182D8018353D4E002A7C64 /* ConsoleUi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsoleUi.h; path = Src/Ui/ConsoleUi.h; sourceTree = "<group>"; };
-		50182D8118353D4E002A7C64 /* ConsoleUi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsoleUi.m; path = Src/Ui/ConsoleUi.m; sourceTree = "<group>"; };
 		502E04461832B49800BD2EA2 /* BoardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardSpec.m; sourceTree = "<group>"; };
+		5030EFB81836BC9100927BE9 /* AiSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiSpec.m; sourceTree = "<group>"; };
+		5030EFBD1836C49000927BE9 /* Ai.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ai.h; path = Src/Players/Ai.h; sourceTree = "<group>"; };
+		5030EFBE1836C49000927BE9 /* Ai.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ai.m; path = Src/Players/Ai.m; sourceTree = "<group>"; };
 		5058F15B1833ECFA00ABF92D /* BoardLogicSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardLogicSpec.m; sourceTree = "<group>"; };
 		5058F167183425EA00ABF92D /* blah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5058F181183425EA00ABF92D /* blahTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blahTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +190,8 @@
 		507C1B2C1833077A006A7319 /* Players */ = {
 			isa = PBXGroup;
 			children = (
+				5030EFBD1836C49000927BE9 /* Ai.h */,
+				5030EFBE1836C49000927BE9 /* Ai.m */,
 				50CC373D18355956003745E4 /* PlayerFactory.h */,
 				50CC373E18355956003745E4 /* PlayerFactory.m */,
 				507C1B2D18330780006A7319 /* ComputerPlayer.h */,
@@ -207,10 +206,6 @@
 		507C1B34183307BF006A7319 /* Ui */ = {
 			isa = PBXGroup;
 			children = (
-				50182D7E18353D4E002A7C64 /* ConsoleIO.h */,
-				50182D7F18353D4E002A7C64 /* ConsoleIO.m */,
-				50182D8018353D4E002A7C64 /* ConsoleUi.h */,
-				50182D8118353D4E002A7C64 /* ConsoleUi.m */,
 				507C1B39183307C8006A7319 /* IO.h */,
 				507C1B4E18331EB1006A7319 /* Ui.h */,
 			);
@@ -271,8 +266,8 @@
 				507C1B4118330EDA006A7319 /* GameSpec.m */,
 				507C1B201832ED37006A7319 /* HumanSpec.m */,
 				507C1B261832F094006A7319 /* ComputerSpec.m */,
-				50182D7618353C76002A7C64 /* ConsoleUISpec.m */,
 				50CC374018355B1D003745E4 /* PlayerFactorySpec.m */,
+				5030EFB81836BC9100927BE9 /* AiSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -541,19 +536,18 @@
 				507C1B4D18331E87006A7319 /* Game.m in Sources */,
 				507C1B3318330780006A7319 /* HumanPlayer.m in Sources */,
 				507C1AFA1832C4CE006A7319 /* board.m in Sources */,
-				50182D7718353C76002A7C64 /* ConsoleUISpec.m in Sources */,
-				50182D8218353D4E002A7C64 /* ConsoleIO.m in Sources */,
-				50182D8318353D4E002A7C64 /* ConsoleUi.m in Sources */,
 				50CC374118355B1D003745E4 /* PlayerFactorySpec.m in Sources */,
 				50989A8F1832B42A00563467 /* main.m in Sources */,
 				50182D7218353757002A7C64 /* MockUi.m in Sources */,
 				507C1B211832ED37006A7319 /* HumanSpec.m in Sources */,
+				5030EFB91836BC9100927BE9 /* AiSpec.m in Sources */,
 				502E04471832B49800BD2EA2 /* BoardSpec.m in Sources */,
 				507C1B3218330780006A7319 /* ComputerPlayer.m in Sources */,
 				50182D7518353C14002A7C64 /* MockIO.m in Sources */,
 				50CC373F18355956003745E4 /* PlayerFactory.m in Sources */,
 				507C1B4218330EDA006A7319 /* GameSpec.m in Sources */,
 				50EBA9771834289400C88342 /* BoardLogic.m in Sources */,
+				5030EFBF1836C49000927BE9 /* Ai.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

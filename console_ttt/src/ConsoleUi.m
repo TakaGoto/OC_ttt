@@ -1,5 +1,5 @@
 #import "ConsoleUi.h"
-#import "IO.h"
+#import "../../ttt_engine/Src/Ui/IO.h"
 #import "stdio.h"
 
 @implementation ConsoleUi
@@ -33,19 +33,19 @@
     NSString* formattedSlot;
 
     for (NSString *slot in board.slots) {
-      if  (counter % boardSize == 0) {
-        [stringBoard appendString:@"\n"];
-      }
+        if  (counter % boardSize == 0) {
+            [stringBoard appendString:@"\n"];
+        }
 
-      if ([slot length] == 1) {
-        formattedSlot = [NSString stringWithFormat:@" %@  ", slot];
-      } else {
-        formattedSlot = [NSString stringWithFormat:@"%@  ", slot];
-      }
+        if ([slot length] == 1) {
+            formattedSlot = [NSString stringWithFormat:@" %@  ", slot];
+        } else {
+            formattedSlot = [NSString stringWithFormat:@"%@  ", slot];
+        }
 
 
-      [stringBoard appendString:formattedSlot];
-      counter++;
+        [stringBoard appendString:formattedSlot];
+        counter++;
     }
 
     [self.io write:stringBoard];

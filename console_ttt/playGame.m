@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "../Src/Ui/ConsoleIO.h"
-#import "../Src/Ui/ConsoleUi.h"
-#import "../Src/Game.h"
-#import "../Src/BoardLogic.h"
+#import "console_ttt/src/ConsoleIO.h"
+#import "console_ttt/src/ConsoleUi.h"
+#import "Src/Game.h"
+#import "Src/BoardLogic.h"
 
 int main(int argc, const char * argv[]) {
   ConsoleIO *io = [[ConsoleIO alloc] init];

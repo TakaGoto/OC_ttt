@@ -1,4 +1,4 @@
-#import "IO.h"
+#import "../../ttt_engine/Src/Ui/IO.h"
 
 @interface ConsoleIO : NSObject <IO>
 

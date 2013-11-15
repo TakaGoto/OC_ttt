@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "IO.h"
-#import "Ui.h"
+#import "../../ttt_engine/Src/Ui/IO.h"
+#import "../../ttt_engine/Src/Ui/Ui.h"
 
 @interface ConsoleUi : NSObject <Ui>
 
