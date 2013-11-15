@@ -17,9 +17,9 @@ OC_ttt
 
 <b>To run tests:</b>
 
-- `cd console_ttt`
+- `cd ttt_console`
 - `xctool -workspace console_ttt.xcworkspace -scheme specs`
 
 # To play from terminal
 
-- `./console_ttt/playGame`
+- `./ttt_console/playGame`
