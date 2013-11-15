@@ -6,20 +6,20 @@ OC_ttt
 - Xcode 5.0 or later
 - xctool
 
-<b>Tic Tac Toe Engine</b>
+# Tic Tac Toe Engine
 
-# To run tests:
+<b>To run tests:</b>
 
 - `cd ttt_engine`
 - `xctool -workspace OCTicTacToe.xcworkspace -scheme Specs`
 
-<b>Tic Tac Toe in Console</b>
+# Tic Tac Toe in Console
 
-# To run tests:
+<b>To run tests:</b>
 
 - `cd console_ttt`
 - `xctool -workspace console_ttt.xcworkspace -scheme specs`
 
-<b>To play from terminal</b>
+# To play from terminal
 
 - `./console_ttt/playGame`
