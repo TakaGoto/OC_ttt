@@ -2,7 +2,7 @@
 
 @implementation BoardLogic
 
-+(NSMutableArray*) generateWinCombinations:(int)boardSize {
++ (NSMutableArray*) generateWinCombinations:(int)boardSize {
     NSMutableArray *winningCombinations = [[NSMutableArray alloc] initWithCapacity:(boardSize * 2) + 2];
 
     [self horizontalCombinations:boardSize withCombinations:winningCombinations];
@@ -12,7 +12,7 @@
     return winningCombinations;
 }
 
-+(void) horizontalCombinations:(int)boardSize withCombinations:(NSMutableArray *)combinations {
++ (void) horizontalCombinations:(int)boardSize withCombinations:(NSMutableArray *)combinations {
     int counter = 1;
     NSMutableArray* combination = [[NSMutableArray alloc] initWithCapacity:boardSize];
     for (int j = 0; j < [self getNumOfSlots:boardSize]; j++) {
@@ -27,7 +27,7 @@
     }
 }
 
-+(void) verticalCombinations:(int)boardSize withCombinations:(NSMutableArray *)combinations {
++ (void) verticalCombinations:(int)boardSize withCombinations:(NSMutableArray *)combinations {
     NSMutableArray* combination = [[NSMutableArray alloc] initWithCapacity:boardSize];
     for (int i = 0; i < boardSize; i++) {
         for(int j = 0; j < [self getNumOfSlots:boardSize]; j+=boardSize) {
@@ -85,14 +85,12 @@
 }
 
 + (BOOL) isTie:(Board *)board {
-    NSMutableDictionary* hasWinner = [self hasWinner:board];
-    return [[hasWinner objectForKey:@"hasWinner"] isEqualToString:@"NO"] && [self isFull:board];
+    return [[[self hasWinner:board] objectForKey:@"hasWinner"] isEqualToString:@"NO"] && [self isFull:board];
 }
 
 + (NSMutableDictionary*) hasWinner:(Board *)board {
     NSMutableDictionary *hasWinner = [[NSMutableDictionary alloc] init];
-    NSInteger size = sqrt([board.slots count]);
-    int boardSize = (int)size;
+    int boardSize = (int)sqrt([board.slots count]);
     NSMutableArray *possibleSlots = [[NSMutableArray alloc] initWithCapacity:boardSize];
 
     for (NSArray *combination in [self generateWinCombinations:boardSize]) {
