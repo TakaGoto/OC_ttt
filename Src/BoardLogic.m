@@ -38,18 +38,25 @@
     }
 }
 
-+(void) diagonalCombinations:(int)boardSize withCombinations:(NSMutableArray *)combinations {
++ (void) diagonalCombinations:(int)boardSize withCombinations:(NSMutableArray *)combinations {
+    [combinations addObject:[self getLeftToRightDiagonalCombination:boardSize]];
+    [combinations addObject:[self getRightToLeftDiagonalCombination:boardSize]];
+}
+
++ (NSMutableArray*) getLeftToRightDiagonalCombination:(int)boardSize {
     NSMutableArray* combination = [[NSMutableArray alloc] initWithCapacity:2];
     for (int i = 0; i < [self getNumOfSlots:boardSize]; i+=(boardSize + 1)) {
         [combination addObject:[NSString stringWithFormat:@"%d", i]];
     }
-    [combinations addObject:combination];
+    return combination;
+}
 
-    combination = [[NSMutableArray alloc] initWithCapacity:2];
++ (NSMutableArray*) getRightToLeftDiagonalCombination:(int)boardSize {
+    NSMutableArray* combination = [[NSMutableArray alloc] initWithCapacity:2];
     for (int j = (boardSize - 1); j < [self getNumOfSlots:boardSize] - 1; j+=(boardSize -1)) {
         [combination addObject:[NSString stringWithFormat:@"%d", j]];
     }
-    [combinations addObject:combination];
+    return combination;
 }
 
 + (int) getNumOfSlots:(int)boardSize {
@@ -93,15 +100,11 @@
             [possibleSlots addObject:[board.slots objectAtIndex:[slot intValue]]];
         }
 
-        if ([[possibleSlots componentsJoinedByString:@""]  isEqual: @"XXX"] ||
-            [[possibleSlots componentsJoinedByString:@""]  isEqual: @"OOO"] ||
-            [[possibleSlots componentsJoinedByString:@""]  isEqual: @"XXXX"] ||
-            [[possibleSlots componentsJoinedByString:@""]  isEqual: @"OOOO"]) {
+        if ([[NSSet setWithArray:possibleSlots] count] == 1) {
             [hasWinner setObject:@"YES" forKey:@"hasWinner"];
             [hasWinner setObject:[possibleSlots objectAtIndex:0] forKey:@"winner"];
             return hasWinner;
         }
-
         possibleSlots = [[NSMutableArray alloc] initWithCapacity:boardSize];
     }
     [hasWinner setObject:@"NO" forKey:@"hasWinner"];

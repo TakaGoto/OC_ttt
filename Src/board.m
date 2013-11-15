@@ -35,4 +35,15 @@
            ![[self.slots objectAtIndex:index-1] isEqualToString:@"O"];
 }
 
+- (NSMutableArray*) emptySlots {
+  NSMutableArray* emptySlots = [[NSMutableArray alloc] initWithCapacity:[self.slots count]];
+
+  for(NSString *slot in self.slots) {
+    if([slot intValue] != 0) {
+      [emptySlots addObject:slot];
+    }
+  }
+  return emptySlots;
+}
+
 @end

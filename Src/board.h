@@ -12,4 +12,6 @@
 
 - (BOOL) validSlot:(int)index;
 
+- (NSMutableArray*) emptySlots;
+
 @end
