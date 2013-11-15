@@ -27,10 +27,27 @@
 }
 
 - (void) printBoard:(Board *)board {
+    int counter = 0;
+    int boardSize = (int) sqrt([board.slots count]);
     NSMutableString *stringBoard = [[NSMutableString alloc] init];
-    for (NSObject *obj in board.slots) {
-        [stringBoard appendString:[obj description]];
+    NSString* formattedSlot;
+
+    for (NSString *slot in board.slots) {
+      if  (counter % boardSize == 0) {
+        [stringBoard appendString:@"\n"];
+      }
+
+      if ([slot length] == 1) {
+        formattedSlot = [NSString stringWithFormat:@" %@  ", slot];
+      } else {
+        formattedSlot = [NSString stringWithFormat:@"%@  ", slot];
+      }
+
+
+      [stringBoard appendString:formattedSlot];
+      counter++;
     }
+
     [self.io write:stringBoard];
 }
 

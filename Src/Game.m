@@ -1,7 +1,5 @@
 #import "Game.h"
 #import "BoardLogic.h"
-#import "Players/HumanPlayer.h"
-#import "Players/ComputerPlayer.h"
 #import "Players/PlayerFactory.h"
 
 @implementation Game
@@ -34,13 +32,13 @@
     while (![BoardLogic isOver:self.board]) {
         [self playGame];
     }
-    
+
     [self endGame];
 }
 
 - (void) startGame {
     [[self ui] welcomeUser];
-    
+
     [self setUpGame];
 }
 
@@ -53,7 +51,7 @@
 - (void) playGame {
     [[self ui] printBoard:self.board];
     [self makePlayerMove:self.playerOne];
-    
+
     if (![BoardLogic isOver:self.board]) {
         [[self ui] printBoard:self.board];
         [self makePlayerMove:self.playerTwo];
@@ -65,7 +63,9 @@
 }
 
 - (void) endGame {
+    [[self ui] printBoard:self.board];
     [[self ui] promptResult:[BoardLogic gameState:self.board]];
+
     if ([[self ui] promptPlayAgain]) {
         [self play];
     }
