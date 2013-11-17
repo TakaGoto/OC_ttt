@@ -6,7 +6,11 @@
 
 - (id) init:(int)size;
 
+- (Board*) initWithSlots:(NSMutableArray*)slots;
+
 - (void) createBoard:(int)size;
+
+- (void) undoMove:(int)index;
 
 - (void) replaceSlot:(int)index withMark:(NSString*)mark;
 

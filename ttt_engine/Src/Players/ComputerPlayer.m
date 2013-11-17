@@ -1,6 +1,7 @@
 #import "ComputerPlayer.h"
 #import "../Ui/Ui.h"
 #import "../board.h"
+#import "Ai.h"
 
 @implementation ComputerPlayer
 
@@ -14,7 +15,7 @@
 }
 
 - (NSMutableArray*) makeMoveWith:(Board*)board andUi:(id<Ui>)ui {
-    [board replaceSlot:0 withMark:self.mark];
+    [board replaceSlot:[Ai getMove:board withMark:self.mark] withMark:self.mark];
     return board.slots;
 }
 
