@@ -6,7 +6,8 @@ OC_ttt
 - [Xcode](https://developer.apple.com/xcode/) 5.0 or later
 - xctool - requires xcode's command line tool
   - `brew install xctool`
-- [CocoaPod](http://cocoapods.org/)
+- [CocoaPods](http://cocoapods.org/)
+  - `gem install cocoapods`
 
 # Tic Tac Toe Engine
 
