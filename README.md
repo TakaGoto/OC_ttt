@@ -4,10 +4,9 @@ OC_ttt
 <b>Requirements</b>
 
 - [Xcode](https://developer.apple.com/xcode/) 5.0 or later
-- xctool 'should come with Xcode command line tool'
+- xctool - should come with Xcode command line tool
 - [CocoaPod](http://cocoapods.org/)
 
-[Link to Adam's layout](http://aekaplan.github.io/projects/dashboard.html)
 # Tic Tac Toe Engine
 
 <b>To run tests:</b>
