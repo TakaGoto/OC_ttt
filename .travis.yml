@@ -1,4 +1,6 @@
 language: objective-c
 
 before_script: bin/travis/before_script.sh
-script: bin/travis/script.sh
+script:
+  - bin/travis/ttt_engine_script.sh
+  - bin/travis/ttt_console_script.sh
