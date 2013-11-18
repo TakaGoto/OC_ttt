@@ -1,3 +1,6 @@
+[![Build Status](https://magnum.travis-ci.com/TakaGoto/OC_ttt.png?token=AoQy2o2YM8JsaWDuHiLa&branch=master)](https://magnum.travis-ci.com/TakaGoto/OC_ttt)
+
+
 OC_ttt
 ======
 
