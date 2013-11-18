@@ -9,12 +9,6 @@ OCDSpec2Context(BoardSpec) {
       BeforeEach(^{
         board = [[Board alloc] init:3];
       });
-      
-      It(@"undo's board move", ^{
-          [board replaceSlot:5 withMark:@"X"];
-          [board undoMove:5];
-          [ExpectStr([board.slots objectAtIndex:5]) toContain:@"6"];
-      });
 
       It(@"has slots", ^{
           [ExpectObj(board) toExist];
@@ -73,7 +67,7 @@ OCDSpec2Context(BoardSpec) {
           [board replaceSlot:4 withMark:@"X"];
           [ExpectInt([[board emptySlots] count]) toBe:7];
       });
-      
+
       It(@"create a new board with slots", ^{
           NSMutableArray *slots = [NSMutableArray arrayWithObjects:@"1", @"2", nil];
           Board *board = [[Board alloc] initWithSlots:slots];

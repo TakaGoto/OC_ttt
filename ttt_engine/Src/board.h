@@ -10,8 +10,6 @@
 
 - (void) createBoard:(int)size;
 
-- (void) undoMove:(int)index;
-
 - (void) replaceSlot:(int)index withMark:(NSString*)mark;
 
 - (BOOL) validSlot:(int)index;

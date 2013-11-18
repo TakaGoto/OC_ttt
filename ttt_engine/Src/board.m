@@ -13,7 +13,7 @@
 
 - (Board*) initWithSlots:(NSMutableArray *)newSlots {
     self = [super init];
-    
+
     if (self) {
         slots = [NSMutableArray arrayWithArray:newSlots];
     }
@@ -32,10 +32,6 @@
         }
     }
     self.slots = generatedBoard;
-}
-
-- (void) undoMove:(int)index {
-    [slots replaceObjectAtIndex:index withObject:[NSString stringWithFormat:@"%lu", (unsigned long)[self.slots indexOfObject:[self.slots objectAtIndex:index]]+1]];
 }
 
 - (void) replaceSlot:(int)index withMark:(NSString*)mark {
