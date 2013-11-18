@@ -25,4 +25,8 @@ OC_ttt
 
 # To play from terminal
 
-- `./playGame`
+- `bin/playGame`
+
+# to compile console ttt
+
+- `bin/compile_console_ttt.sh`
