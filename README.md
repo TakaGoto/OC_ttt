@@ -32,6 +32,7 @@ OC_ttt
 
 - `bin/playGame`
 
-# to compile console ttt
+# to compile console ttt from root
 
 - `bin/compile_console_ttt.sh`
+- `bin/playGame` from root to play
