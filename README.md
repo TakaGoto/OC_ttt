@@ -24,6 +24,11 @@ OC_ttt
 - `pod install`
 - `xctool -workspace OCTicTacToe.xcworkspace -scheme Specs`
 
+<b>Troubleshooting - if you have trouble running specs from the command line you can run it through xcode</b>
+
+- open up <b>OCTicTacToe.xcworkspace</b> on Xcode, not .project.
+- `⌘ b` to build/run spec. To see output view -> debug -> Activate Console.
+
 # Tic Tac Toe in Console
 
 <b>To run tests:</b>
@@ -31,6 +36,11 @@ OC_ttt
 - `cd ttt_console`
 - `pod install`
 - `xctool -workspace console_ttt.xcworkspace -scheme specs`
+
+<b>Troubleshooting if you have trouble running specs from the command line you can run it through xcode</b>
+
+- open up <b>console_ttt.xcworkspace</b> on Xcode, not .project.
+- `⌘ b` to build/run spec. To see output view -> debug -> Activate Console.
 
 # To play from terminal
 
